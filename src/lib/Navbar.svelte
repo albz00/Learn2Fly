@@ -1,35 +1,32 @@
 <script>
   import { onMount } from 'svelte';
-  import { nav, contact } from './data.js';
+  import { nav, contact, brand } from './data.js';
 
   let scrolled = $state(false);
-  let openMenu = $state(null); // desktop dropdown key
+  let openMenu = $state(null);
   let mobileOpen = $state(false);
 
   onMount(() => {
-    const onScroll = () => (scrolled = window.scrollY > 24);
+    const onScroll = () => (scrolled = window.scrollY > 8);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   });
 
-  function go(href) {
+  function close() {
     mobileOpen = false;
     openMenu = null;
   }
 </script>
 
 <header
-  class="fixed inset-x-0 top-0 z-50 transition-colors duration-500"
-  class:bg-paper={scrolled || mobileOpen}
-  class:border-b={scrolled || mobileOpen}
-  class:hairline={scrolled || mobileOpen}
+  class="fixed inset-x-0 top-0 z-50 border-b hairline bg-paper transition-shadow duration-300"
+  class:shadow-[0_10px_40px_-24px_rgba(16,21,27,0.5)]={scrolled}
 >
   <nav class="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-6 lg:px-10">
-    <!-- wordmark -->
-    <a href="#home" onclick={() => go('#home')} class="group flex items-baseline gap-2">
-      <span class="display text-xl font-semibold tracking-tight text-ink">Learn2Fly</span>
-      <span class="label text-[0.6rem] text-signal">FLORIDA</span>
+    <!-- wordmark / logo -->
+    <a href="#home" onclick={close} class="flex items-center gap-3">
+      <img src={brand.logo} alt={brand.logoAlt} class="h-9 w-auto" />
     </a>
 
     <!-- desktop nav -->
@@ -42,7 +39,7 @@
         >
           <a
             href={item.href}
-            onclick={() => go(item.href)}
+            onclick={close}
             class="flex items-center gap-1.5 px-3 py-2 text-sm text-ink/80 transition-colors hover:text-ink"
           >
             <span class="ulink">{item.label}</span>
@@ -62,17 +59,15 @@
               class:translate-y-1={openMenu !== item.label}
             >
               <ul class="border border-line bg-paper p-2 shadow-[0_20px_60px_-30px_rgba(16,21,27,0.6)]">
-                {#each item.children as child, i}
+                {#each item.children as child}
                   <li>
                     <a
                       href={child.href}
-                      onclick={() => go(child.href)}
-                      class="flex items-center justify-between gap-6 px-3 py-2.5 text-sm text-ink/75 transition-colors hover:bg-paper-2 hover:text-ink"
+                      onclick={close}
+                      class="group flex items-center gap-3 px-3 py-2.5 text-sm text-ink/75 transition-colors hover:bg-paper-2 hover:text-ink"
                     >
+                      <span class="h-1 w-1 shrink-0 bg-signal transition-transform duration-300 group-hover:scale-150"></span>
                       <span>{child.label}</span>
-                      <span class="label text-[0.55rem] text-soft"
-                        >{String(i + 1).padStart(2, '0')}</span
-                      >
                     </a>
                   </li>
                 {/each}
@@ -90,9 +85,9 @@
       >
       <a
         href="#contact"
-        class="group relative overflow-hidden border border-ink bg-ink px-5 py-2.5 text-sm text-paper transition-colors"
+        class="border border-ink bg-ink px-5 py-2.5 text-sm text-paper transition-colors hover:bg-transparent hover:text-ink"
       >
-        <span class="relative z-10">Contact</span>
+        Contact
       </a>
     </div>
 
@@ -122,23 +117,15 @@
       <ul class="mx-auto max-w-[1240px] px-6 py-4">
         {#each nav as item}
           <li class="border-b border-line/60 last:border-0">
-            <a
-              href={item.href}
-              onclick={() => go(item.href)}
-              class="flex items-center justify-between py-3.5"
-            >
+            <a href={item.href} onclick={close} class="flex items-center justify-between py-3.5">
               <span class="display text-lg">{item.label}</span>
-              <span class="label text-[0.55rem] text-soft">{item.children ? 'SECTION' : ''}</span>
             </a>
             {#if item.children}
               <ul class="-mt-1 pb-3 pl-1">
                 {#each item.children as child}
                   <li>
-                    <a
-                      href={child.href}
-                      onclick={() => go(child.href)}
-                      class="block py-1.5 text-sm text-soft"
-                    >
+                    <a href={child.href} onclick={close} class="flex items-center gap-2.5 py-1.5 text-sm text-soft">
+                      <span class="h-1 w-1 shrink-0 bg-signal"></span>
                       {child.label}
                     </a>
                   </li>
@@ -148,13 +135,7 @@
           </li>
         {/each}
         <li class="pt-5">
-          <a
-            href="#contact"
-            onclick={() => go('#contact')}
-            class="block bg-ink px-5 py-3.5 text-center text-paper"
-          >
-            Contact
-          </a>
+          <a href="#contact" onclick={close} class="block bg-ink px-5 py-3.5 text-center text-paper">Contact</a>
         </li>
       </ul>
     </div>

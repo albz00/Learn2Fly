@@ -1,11 +1,12 @@
 <script>
   import SectionHead from './SectionHead.svelte';
+  import Check from './Check.svelte';
   import { rates, rateNotes } from './data.js';
 </script>
 
 <section id="rates" class="border-y border-line bg-paper-2/50">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead index="03" kicker="Rates" title="Honest, pay-as-you-go pricing." />
+    <SectionHead kicker="Rates" title="Honest, pay-as-you-go pricing." />
 
     <div class="mt-14 grid gap-14 lg:grid-cols-12">
       <div class="lg:col-span-8">
@@ -29,9 +30,9 @@
         <div class="border border-line bg-paper p-7">
           <div class="label mb-5 text-signal">Fine Print</div>
           <ul class="space-y-4">
-            {#each rateNotes as note, i}
+            {#each rateNotes as note}
               <li class="flex gap-3 text-sm leading-relaxed text-soft">
-                <span class="label shrink-0 text-ink/40">{String(i + 1).padStart(2, '0')}</span>
+                <Check />
                 <span>{note}</span>
               </li>
             {/each}

@@ -1,5 +1,32 @@
 // Central content for the one-page site.
 
+export const brand = {
+  name: 'Learn2FlyFlorida',
+  logo: 'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/9d4d31c0-9e19-41a3-15ae-fd862b440c00/public',
+  logoAlt: 'Learn2FlyFlorida Flight Training in Lake City, Florida',
+};
+
+export const images = {
+  planeHero:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/7b6ef135-6f82-44b4-f221-18991da3a200/public',
+  instructor:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/2df1a2a4-6f36-4385-c9e3-4f57137a1600/public',
+  instrumentCloseUp:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/4add3f94-3345-4844-1488-ec33380f8100/public',
+  privatePilotCert:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/34012df5-3908-4d69-7f69-d22870ca1e00/public',
+  aircraftExterior:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/b4f2b8d7-bb37-4556-a370-1fd2a4bb1e00/public',
+  aircraftCockpit:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/3ad5a228-0f95-4af1-0b5f-ad8634ccbd00/public',
+};
+
+export const instructor = {
+  name: 'Ralph',
+  title: 'Chief Flight Instructor',
+  photoAlt: 'Ralph, Gold Seal flight instructor at Learn2FlyFlorida',
+};
+
 export const contact = {
   phone: '386-965-1502',
   phoneHref: 'tel:+13869651502',
@@ -7,7 +34,6 @@ export const contact = {
   emailHref: 'mailto:info@Learn2FlyFlorida.com',
   airport: 'KLCQ · Lake City Gateway',
   city: 'Lake City, Florida',
-  coords: '30.18° N · 82.58° W',
 };
 
 export const nav = [
@@ -37,10 +63,10 @@ export const nav = [
 ];
 
 export const certificates = [
-  'Airline Transport Pilot — Multiengine Land (ATP)',
-  'CL-65 Type Rating — CRJ 200 / 700 / 900',
-  'Flight Instructor — Single & Multiengine Land & Sea',
-  'Flight Instructor — Instrument Airplane',
+  'Airline Transport Pilot, Multiengine Land (ATP)',
+  'CL-65 Type Rating, CRJ 200 / 700 / 900',
+  'Flight Instructor, Single & Multiengine Land & Sea',
+  'Flight Instructor, Instrument Airplane',
   'Advanced Ground Instructor',
   'Gold Seal Flight Instructor',
   'FAA Airframe Mechanic',
@@ -50,7 +76,9 @@ export const courses = [
   {
     id: '01',
     name: 'Private Pilot',
-    hours: '45–55 hrs',
+    hours: '45 to 55 hrs',
+    image: images.privatePilotCert,
+    imageAlt: 'FAA Private Pilot certificate — your goal after training at Learn2FlyFlorida',
     summary:
       'Your first certificate and the foundation of every rating that follows. Most students finish well inside the national average.',
     points: [
@@ -64,7 +92,7 @@ export const courses = [
     name: 'Instrument Rating',
     hours: '40 hrs',
     summary:
-      'Fly confidently in the clouds and the system. Up to 10 hours may be flown in the Redbird simulator — no aircraft or instructor rental on those hours.',
+      'Fly confidently in the clouds and the system. Up to 10 hours may be flown in the Redbird simulator, with no aircraft or instructor rental on those hours.',
     points: [
       'Approaches, holds and IFR enroute procedures',
       'Redbird FMX simulator integration',
@@ -146,9 +174,9 @@ export const resources = [
   {
     group: 'Before You Fly',
     items: [
-      { label: 'MedXPress — Medical Certificate', meta: 'Class 1 / 2 / 3', href: 'https://medxpress.faa.gov' },
+      { label: 'MedXPress Medical Certificate', meta: 'Class 1 / 2 / 3', href: 'https://medxpress.faa.gov' },
       { label: 'Find an AME (Medical Examiner)', meta: 'Locator', href: 'https://designee.faa.gov/designeeLocator' },
-      { label: 'IACRA — Student Pilot Application', meta: 'Online', href: 'https://iacra.faa.gov' },
+      { label: 'IACRA Student Pilot Application', meta: 'Online', href: 'https://iacra.faa.gov' },
       { label: 'Knowledge Test Scheduling', meta: 'PSI', href: 'https://faa.psiexams.com' },
     ],
   },
@@ -157,7 +185,7 @@ export const resources = [
     items: [
       { label: 'Aviation Weather Center', meta: 'METAR · TAF', href: 'https://aviationweather.gov' },
       { label: 'Standard Weather Briefing', meta: '1-800-WX-BRIEF', href: 'https://www.1800wxbrief.com' },
-      { label: 'KLCQ — Lake City Gateway', meta: 'Airport info', href: 'https://www.airnav.com/airport/KLCQ' },
+      { label: 'KLCQ Lake City Gateway', meta: 'Airport info', href: 'https://www.airnav.com/airport/KLCQ' },
       { label: 'Chart Supplement (Southeast)', meta: 'FAA', href: 'https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dafd' },
     ],
   },
@@ -169,24 +197,28 @@ export const testimonials = [
       'I went from a discovery flight to my Private certificate without ever feeling rushed. Every lesson had a plan, and the debriefs are where it really clicked.',
     name: 'Daniel R.',
     detail: 'Private Pilot · 49 hrs',
+    rating: 5,
   },
   {
     quote:
       'The Redbird time made instrument approaches second nature before I ever flew them for real. It saved me money and made me a sharper, safer pilot.',
     name: 'Marisa K.',
     detail: 'Instrument Rating',
+    rating: 5,
   },
   {
     quote:
       'Learning to teach from a Gold Seal instructor changed how I think about flying. The CFI prep was thorough and honest about the checkride.',
     name: 'Anthony V.',
     detail: 'CFI · Now flying regional',
+    rating: 5,
   },
   {
     quote:
       'One airplane, one instructor, one standard. No factory schedule, no revolving door of CFIs. Exactly what I was looking for.',
     name: 'Sofia L.',
     detail: 'Private Pilot in progress',
+    rating: 5,
   },
 ];
 
@@ -197,11 +229,11 @@ export const faqs = [
   },
   {
     q: 'How long does the Private Pilot certificate take?',
-    a: 'Most students complete the Private Pilot certificate in 45–55 hours of flight training. Your pace depends on how often you fly and how consistently you study.',
+    a: 'Most students complete the Private Pilot certificate in 45 to 55 hours of flight training. Your pace depends on how often you fly and how consistently you study.',
   },
   {
     q: 'Can the simulator count toward my rating?',
-    a: 'Yes. The Redbird FMX is an approved advanced training device. Up to 10 of the 40 hours required for the instrument rating may be flown in the simulator — with no aircraft or instructor rental on those hours.',
+    a: 'Yes. The Redbird FMX is an approved advanced training device. Up to 10 of the 40 hours required for the instrument rating may be flown in the simulator, with no aircraft or instructor rental on those hours.',
   },
   {
     q: 'What about a medical certificate?',
@@ -209,10 +241,10 @@ export const faqs = [
   },
   {
     q: 'How does payment work?',
-    a: 'Training is pay-as-you-go. You pay for the aircraft and instruction you use — there are no large packages to commit to up front.',
+    a: 'Training is pay-as-you-go. You pay for the aircraft and instruction you use. There are no large packages to commit to up front.',
   },
   {
     q: 'Where are you based?',
-    a: 'All training is conducted out of KLCQ — Lake City Gateway Airport in Lake City, Florida, a quiet, uncongested field that is ideal for learning.',
+    a: 'All training is conducted out of KLCQ, Lake City Gateway Airport in Lake City, Florida, a quiet, uncongested field that is ideal for learning.',
   },
 ];

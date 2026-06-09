@@ -1,5 +1,5 @@
 <script>
-  import { contact, nav } from './data.js';
+  import { contact, nav, brand } from './data.js';
   const year = new Date().getFullYear();
 </script>
 
@@ -7,13 +7,19 @@
   <div class="mx-auto max-w-[1240px] px-6 py-16 lg:px-10">
     <div class="grid gap-12 border-b border-line-dark pb-14 md:grid-cols-12">
       <div class="md:col-span-5">
-        <div class="flex items-baseline gap-2">
-          <span class="display text-2xl font-semibold text-paper">Learn2Fly</span>
-          <span class="label text-[0.6rem] text-signal">FLORIDA</span>
-        </div>
+        <a href="#home" class="inline-block">
+          <img
+            src={brand.logo}
+            alt={brand.logoAlt}
+            width="260"
+            height="56"
+            class="h-12 w-auto sm:h-14"
+            loading="lazy"
+          />
+        </a>
         <p class="mt-5 max-w-xs text-sm leading-relaxed text-paper/55">
           FAA Part 61 flight training in {contact.city}. Private, Instrument, Commercial and Flight Instructor
-          certificates — taught one-on-one.
+          certificates, taught one-on-one.
         </p>
       </div>
 
@@ -33,7 +39,7 @@
           <li><a href={contact.phoneHref} class="font-mono text-sm text-paper">{contact.phone}</a></li>
           <li><a href={contact.emailHref} class="ulink text-sm text-paper/80">{contact.email}</a></li>
           <li class="label pt-2 text-paper/45">{contact.airport}</li>
-          <li class="label text-paper/45">{contact.coords}</li>
+          <li class="label text-paper/45">{contact.city}</li>
         </ul>
       </div>
     </div>

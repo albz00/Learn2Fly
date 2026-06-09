@@ -8,7 +8,7 @@
 
 <section id="faq" class="border-t border-line bg-paper-2/50">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead index="01·F" kicker="Frequently Asked" title="Questions, answered straight." />
+    <SectionHead kicker="Frequently Asked" title="Questions, answered straight." />
 
     <div class="mt-12 border-t border-line">
       {#each faqs as item, i}
@@ -18,7 +18,6 @@
             onclick={() => toggle(i)}
             aria-expanded={open === i}
           >
-            <span class="label shrink-0 text-soft">{String(i + 1).padStart(2, '0')}</span>
             <span class="display flex-1 text-xl text-ink sm:text-2xl">{item.q}</span>
             <span
               class="relative h-3.5 w-3.5 shrink-0 transition-transform duration-300"
@@ -33,7 +32,7 @@
             style="grid-template-rows:{open === i ? '1fr' : '0fr'}"
           >
             <div class="overflow-hidden">
-              <p class="max-w-2xl pb-7 pl-[2.6rem] text-base leading-relaxed text-soft">
+              <p class="max-w-2xl pb-7 text-base leading-relaxed text-soft">
                 {item.a}
               </p>
             </div>
