@@ -9,7 +9,7 @@
 
 <section class="border-t border-line bg-paper-2/40">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead kicker="Testimonials" title="Pilots who started exactly where you are." />
+    <SectionHead title="Pilots who started exactly where you are." />
 
     <!-- featured -->
     <figure class="relative mt-14 overflow-hidden border border-line bg-paper p-8 shadow-[0_30px_80px_-50px_rgba(16,21,27,0.55)] sm:p-12 lg:p-16">

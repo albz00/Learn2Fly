@@ -14,7 +14,7 @@
 
 <section id="contact" class="border-t border-line bg-paper">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead kicker="Contact" title="Ready when you are." />
+    <SectionHead title="Ready when you are." />
 
     <div class="mt-14 grid gap-14 lg:grid-cols-12 lg:gap-16">
       <!-- contact details -->
@@ -39,14 +39,14 @@
           </div>
           <div class="border-b border-line py-6">
             <dt class="label text-soft">Based at</dt>
-            <dd class="mt-2 font-mono text-sm text-ink">{contact.airport} · {contact.coords}</dd>
+            <dd class="mt-2 font-mono text-sm text-ink">{contact.airport} · {contact.city}</dd>
           </div>
         </dl>
       </div>
 
       <!-- form -->
       <div class="lg:col-span-7">
-        <div class="border border-line border-t-2 border-t-signal bg-paper p-8 shadow-[0_30px_80px_-55px_rgba(16,21,27,0.6)] sm:p-10">
+        <div class="rounded-2xl border border-line border-t-2 border-t-signal bg-paper p-8 shadow-[0_30px_80px_-55px_rgba(16,21,27,0.6)] sm:p-10">
           {#if sent}
             <div class="flex min-h-[24rem] flex-col items-start justify-center">
               <span class="h-3 w-3 bg-signal"></span>
@@ -99,7 +99,7 @@
 
               <button
                 type="submit"
-                class="w-full bg-ink px-6 py-4 text-sm text-paper transition-colors hover:bg-signal"
+                class="w-full rounded-lg bg-ink px-6 py-4 text-sm text-paper transition-colors hover:bg-signal"
               >
                 Send request &#8594;
               </button>

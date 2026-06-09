@@ -6,7 +6,7 @@
 
 <section id="rates" class="border-y border-line bg-paper-2/50">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead kicker="Rates" title="Honest, pay-as-you-go pricing." />
+    <SectionHead title="Honest, pay-as-you-go pricing." />
 
     <div class="mt-14 grid gap-14 lg:grid-cols-12">
       <div class="lg:col-span-8">

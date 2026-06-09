@@ -4,12 +4,12 @@
 </script>
 
 <section id="aircraft" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-  <SectionHead index="04" kicker="Training Aircraft" title="One airplane. Beautifully kept." />
+  <SectionHead title="One airplane. Beautifully kept." />
 
   <div class="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-16">
     <!-- visual panel -->
     <div class="space-y-4 lg:col-span-7">
-      <div class="relative aspect-[16/10] overflow-hidden border border-line-dark bg-ink">
+      <div class="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line-dark bg-ink">
         <img
           src={images.aircraftExterior}
           alt="1969 Piper Cherokee 140 N833WT on the ramp at Lake City Gateway Airport"
@@ -18,13 +18,13 @@
           decoding="async"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
-        <div class="absolute left-6 top-6 label text-paper/70">FLEET · 01</div>
+        <div class="absolute left-6 top-6 label text-paper/70">TRAINING AIRCRAFT</div>
         <div class="absolute bottom-6 left-6 font-mono text-sm text-paper">Piper Cherokee 140 · N833WT</div>
         <div class="absolute bottom-6 right-6 label text-signal">$150 / HR WET</div>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
-        <div class="relative aspect-[4/3] overflow-hidden border border-line">
+        <div class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line">
           <img
             src={images.aircraftCockpit}
             alt="Modernized instrument panel of the Learn2FlyFlorida Cherokee 140 with Garmin avionics"
@@ -33,7 +33,7 @@
             decoding="async"
           />
         </div>
-        <div class="relative aspect-[4/3] overflow-hidden border border-line">
+        <div class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line">
           <img
             src={images.instrumentCloseUp}
             alt="Primary flight instruments in the Cherokee 140 including digital attitude indicator and steam gauges"
@@ -54,7 +54,7 @@
         train in, so you will know it intimately by checkride day.
       </p>
 
-      <dl class="mt-10 grid grid-cols-2 gap-px border border-line bg-line">
+      <dl class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line">
         {#each aircraftSpecs as s}
           <div class="bg-paper px-5 py-5">
             <dt class="label text-soft">{s.k}</dt>

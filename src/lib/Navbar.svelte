@@ -26,7 +26,7 @@
   <nav class="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-6 lg:px-10">
     <!-- wordmark / logo -->
     <a href="#home" onclick={close} class="flex items-center gap-3">
-      <img src={brand.logo} alt={brand.logoAlt} class="h-9 w-auto" />
+      <img src={brand.logo} alt={brand.logoAlt} class="h-14 w-auto" />
     </a>
 
     <!-- desktop nav -->
@@ -79,13 +79,16 @@
     </ul>
 
     <!-- contact CTA -->
-    <div class="hidden items-center gap-5 lg:flex">
-      <a href={contact.phoneHref} class="label text-[0.65rem] text-ink/70 transition-colors hover:text-ink"
-        >{contact.phone}</a
+    <div class="hidden items-center gap-3 lg:flex">
+      <a
+        href={contact.phoneHref}
+        class="rounded-lg border border-ink px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:bg-ink hover:text-paper"
       >
+        {contact.phone}
+      </a>
       <a
         href="#contact"
-        class="border border-ink bg-ink px-5 py-2.5 text-sm text-paper transition-colors hover:bg-transparent hover:text-ink"
+        class="rounded-lg border border-ink bg-ink px-5 py-2.5 text-sm text-paper transition-colors hover:bg-transparent hover:text-ink"
       >
         Contact
       </a>
@@ -134,8 +137,17 @@
             {/if}
           </li>
         {/each}
-        <li class="pt-5">
-          <a href="#contact" onclick={close} class="block bg-ink px-5 py-3.5 text-center text-paper">Contact</a>
+        <li class="flex flex-col gap-3 pt-5">
+          <a
+            href={contact.phoneHref}
+            onclick={close}
+            class="block rounded-lg border border-ink px-5 py-3.5 text-center font-mono text-sm text-ink"
+          >
+            {contact.phone}
+          </a>
+          <a href="#contact" onclick={close} class="block rounded-lg bg-ink px-5 py-3.5 text-center text-paper"
+            >Contact</a
+          >
         </li>
       </ul>
     </div>

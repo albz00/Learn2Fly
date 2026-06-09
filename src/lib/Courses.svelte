@@ -5,13 +5,13 @@
 </script>
 
 <section id="courses" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-  <SectionHead kicker="Courses" title="Every certificate, one flight line." />
+  <SectionHead title="Every certificate, one flight line." />
 
   <div class="mt-14 grid gap-px border border-line bg-line md:grid-cols-2">
     {#each courses as c}
       <article class="group flex flex-col bg-paper p-8 transition-colors hover:bg-paper-2/60 lg:p-10">
         {#if c.image}
-          <div class="mb-6 overflow-hidden border border-line">
+          <div class="mb-6 overflow-hidden rounded-xl border border-line">
             <img
               src={c.image}
               alt={c.imageAlt}

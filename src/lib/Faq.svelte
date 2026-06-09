@@ -8,7 +8,7 @@
 
 <section id="faq" class="border-t border-line bg-paper-2/50">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead kicker="Frequently Asked" title="Questions, answered straight." />
+    <SectionHead title="Questions, answered straight." />
 
     <div class="mt-12 border-t border-line">
       {#each faqs as item, i}

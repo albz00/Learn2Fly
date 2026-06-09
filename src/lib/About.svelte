@@ -5,13 +5,13 @@
 </script>
 
 <section id="about" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-  <SectionHead kicker="About" title="A career cockpit, now your classroom." />
+  <SectionHead title="A career cockpit, now your classroom." />
 
   <div class="mt-14 grid gap-14 lg:grid-cols-12">
     <div class="lg:col-span-7">
       <div class="flex flex-col gap-10 sm:flex-row sm:items-start">
         <div class="shrink-0">
-          <div class="relative aspect-[3/4] w-48 overflow-hidden border border-line sm:w-52">
+          <div class="relative aspect-[3/4] w-48 overflow-hidden rounded-2xl border border-line sm:w-52">
             <img
               src={images.instructor}
               alt={instructor.photoAlt}
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <div class="mt-10 grid grid-cols-3 gap-px border border-line bg-line">
+      <div class="mt-10 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-line bg-line">
         {#each [['1969', 'Cherokee 140'], ['10 hrs', 'Sim eligible'], ['1:1', 'Instruction']] as [big, small]}
           <div class="bg-paper px-5 py-6">
             <div class="display text-3xl text-ink">{big}</div>

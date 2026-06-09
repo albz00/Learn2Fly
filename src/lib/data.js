@@ -6,6 +6,14 @@ export const brand = {
   logoAlt: 'Learn2FlyFlorida Flight Training in Lake City, Florida',
 };
 
+export const seo = {
+  siteUrl: 'https://learn2flyflorida.com',
+  title: 'Learn2FlyFlorida — Flight Training · Lake City, FL',
+  description:
+    'FAA Part 61 flight school in Lake City, Florida. Private Pilot, Instrument, Commercial and CFI training with one-on-one instruction at Lake City Gateway Airport (KLCQ).',
+  ogImageAlt: '1969 Piper Cherokee 140 training aircraft at Lake City Gateway Airport, Florida',
+};
+
 export const images = {
   planeHero:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/7b6ef135-6f82-44b4-f221-18991da3a200/public',
@@ -13,8 +21,6 @@ export const images = {
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/2df1a2a4-6f36-4385-c9e3-4f57137a1600/public',
   instrumentCloseUp:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/4add3f94-3345-4844-1488-ec33380f8100/public',
-  privatePilotCert:
-    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/34012df5-3908-4d69-7f69-d22870ca1e00/public',
   aircraftExterior:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/b4f2b8d7-bb37-4556-a370-1fd2a4bb1e00/public',
   aircraftCockpit:
@@ -74,11 +80,8 @@ export const certificates = [
 
 export const courses = [
   {
-    id: '01',
     name: 'Private Pilot',
     hours: '45 to 55 hrs',
-    image: images.privatePilotCert,
-    imageAlt: 'FAA Private Pilot certificate — your goal after training at Learn2FlyFlorida',
     summary:
       'Your first certificate and the foundation of every rating that follows. Most students finish well inside the national average.',
     points: [
@@ -88,7 +91,6 @@ export const courses = [
     ],
   },
   {
-    id: '02',
     name: 'Instrument Rating',
     hours: '40 hrs',
     summary:
@@ -100,7 +102,6 @@ export const courses = [
     ],
   },
   {
-    id: '03',
     name: 'Commercial Pilot',
     hours: 'Build & refine',
     summary:
@@ -112,7 +113,6 @@ export const courses = [
     ],
   },
   {
-    id: '04',
     name: 'Flight Instructor · CFI',
     hours: 'Teach to fly',
     summary:
@@ -224,27 +224,27 @@ export const testimonials = [
 
 export const faqs = [
   {
-    q: 'Do I need any experience to start?',
-    a: 'None at all. Most students begin with a discovery flight and no prior hours. Training is built from the ground up around you.',
+    q: 'What day of the week does training start?',
+    a: 'Training can start any day of the week. If you are interested in training we can find a convenient start time for you. Since designated examiners do not generally work on Sundays, I like to start so your training doesn’t end with a Sunday practical exam.',
   },
   {
-    q: 'How long does the Private Pilot certificate take?',
-    a: 'Most students complete the Private Pilot certificate in 45 to 55 hours of flight training. Your pace depends on how often you fly and how consistently you study.',
+    q: 'What is a Practical Exam?',
+    a: 'The FAA term for a checkride is the Practical Exam. Most FAA practical exams consist of three phases. Phase one is check-in and verification of identity, written exam results and eligibility to take the practical exam you have applied for. Phase two is the oral exam — most oral exams take between two and four hours, though the oral technically never ends and continues through phase three. Phase three is the flight test, which consists of the maneuvers and flying skills outlined in the FAA Airman Certification Standards.',
   },
   {
-    q: 'Can the simulator count toward my rating?',
-    a: 'Yes. The Redbird FMX is an approved advanced training device. Up to 10 of the 40 hours required for the instrument rating may be flown in the simulator, with no aircraft or instructor rental on those hours.',
+    q: 'Does the cost have to be paid in advance?',
+    a: 'No, you can pay as you go.',
   },
   {
-    q: 'What about a medical certificate?',
-    a: 'You will need an FAA medical certificate to solo. We will walk you through MedXPress and help you find a nearby Aviation Medical Examiner before that point.',
+    q: 'Do you guarantee a student will leave with an instrument rating?',
+    a: 'No. My guarantee is that once I sign you off for a practical exam you will pass, or I will re-train you in the areas you failed for free. Most students complete the course in the amount of time and cost outlined in my course descriptions. However, some students may need additional training before they are ready to sit for their practical exam. I will do everything I can to get you done on-time and on budget.',
   },
   {
-    q: 'How does payment work?',
-    a: 'Training is pay-as-you-go. You pay for the aircraft and instruction you use. There are no large packages to commit to up front.',
+    q: 'Will we fly in actual instrument conditions?',
+    a: 'Yes! However, for safety I require a ceiling no lower than 800 feet and visibility of 3 miles or better. We also must be able to file a legal alternate within our fuel requirements. In addition, no thunderstorms or icing can be forecast or present when we fly. Depending on the time of year, you may get a lot of actual time or none.',
   },
   {
-    q: 'Where are you based?',
-    a: 'All training is conducted out of KLCQ, Lake City Gateway Airport in Lake City, Florida, a quiet, uncongested field that is ideal for learning.',
+    q: 'Do I have to have my written exam done before I start training?',
+    a: 'Yes. The written exam can be easily self-studied before you get here. For the most part it is an exercise in rote memorization, and you will not have the time or energy to study for it once you are here and flight training. I recommend the King Schools Instrument Prep Course.',
   },
 ];
