@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+/*
+  Learn2FlyFlorida — design system
+  ----------------------------------
+  Typography concept:
+    - Space Grotesk : sleek geometric display headings
+    - Inter         : quiet, legible body copy
+    - B612 Mono     : the "flight font" — B612 was commissioned by Airbus for
+                      cockpit display screens. Used here for all technical
+                      labels, flight-data figures and tags.
+*/
+
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'B612 Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --color-paper: #f2efe6;
+  --color-paper-2: #eae6d9;
+  --color-ink: #10151b;
+  --color-ink-2: #1a212a;
+  --color-soft: #59626d;
+  --color-line: #d7d2c4;
+  --color-line-dark: #2a333d;
+  --color-accent: #1b3b5a;
+  --color-signal: #c2542f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+}
+
+@layer components {
+  /* tracked monospace eyebrow / flight-data label */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+  }
+
+  .hairline {
+    border-color: var(--color-line);
+  }
+
+  /* thin animated underline used on nav + links */
+  .ulink {
+    position: relative;
+  }
+  .ulink::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 0;
+    background: currentColor;
+    transition: width 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .ulink:hover::after {
+    width: 100%;
+  }
+}
+
+/* hide scrollbar on horizontal strips but keep scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
