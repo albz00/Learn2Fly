@@ -82,7 +82,7 @@
     <div class="hidden items-center gap-3 lg:flex">
       <a
         href={contact.phoneHref}
-        class="rounded-lg border border-ink px-5 py-2.5 font-mono text-sm text-ink transition-colors hover:bg-ink hover:text-paper"
+        class="rounded-lg border border-ink px-5 py-2.5 text-sm text-ink transition-colors hover:bg-ink hover:text-paper"
       >
         {contact.phone}
       </a>
@@ -141,7 +141,7 @@
           <a
             href={contact.phoneHref}
             onclick={close}
-            class="block rounded-lg border border-ink px-5 py-3.5 text-center font-mono text-sm text-ink"
+            class="block rounded-lg border border-ink px-5 py-3.5 text-center text-sm text-ink"
           >
             {contact.phone}
           </a>
