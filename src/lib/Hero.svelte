@@ -54,11 +54,6 @@
             pilot certificate, including Private Pilot, Instrument rating, Commercial Pilot, and Certified Flight Instructor.
           </p>
 
-          <p class="mt-4 max-w-xl text-base leading-relaxed text-paper/72">
-            Career-bound or flying for yourself, a solid Private Pilot foundation is the key to your
-            Instrument and Commercial certificates.
-          </p>
-
           <div class="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="/courses"
