@@ -67,8 +67,18 @@
           {title}
         </h1>
         <p class="mt-7 max-w-2xl text-base leading-relaxed text-paper/76 sm:text-lg">{summary}</p>
+        {#if image}
+          <img
+            src={image}
+            alt={imageAlt}
+            class={`mt-5 h-[4.25rem] w-auto max-w-[9.5rem] object-contain object-left opacity-90 sm:mt-6 sm:h-20 sm:max-w-[10.5rem] md:h-[5.5rem] md:max-w-[11.5rem] lg:pointer-events-none lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:h-[102%] lg:w-[min(37vw,29rem)] lg:max-w-none lg:object-bottom lg:opacity-100 xl:h-[106%] ${imageClass}`}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        {/if}
         {#if primaryCta || secondaryCta}
-          <div class="mt-8 flex flex-wrap items-center gap-4">
+          <div class="mt-6 flex flex-wrap items-center gap-4 lg:mt-8">
             {#if primaryCta}
               <a href={primaryCta.href} class="btn-gradient-signal">{primaryCta.label}</a>
             {/if}
@@ -78,17 +88,6 @@
           </div>
         {/if}
       </div>
-
-      {#if image}
-        <img
-          src={image}
-          alt={imageAlt}
-          class={`pointer-events-none absolute bottom-0 right-0 hidden h-[102%] w-[min(37vw,29rem)] object-contain object-bottom lg:block xl:h-[106%] ${imageClass}`}
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
-      {/if}
     </div>
   </div>
 </section>

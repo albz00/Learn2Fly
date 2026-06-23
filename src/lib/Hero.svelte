@@ -54,7 +54,16 @@
             pilot certificate, including Private Pilot, Instrument rating, Commercial Pilot, and Certified Flight Instructor.
           </p>
 
-          <div class="mt-10 flex flex-wrap items-center gap-4">
+          <img
+            src={instructorPortrait}
+            alt="Sketch of an airplane circling a globe representing Learn2FlyFlorida flight training"
+            class="mt-5 h-[4.25rem] w-auto max-w-[9.5rem] object-contain object-left opacity-90 sm:mt-6 sm:h-20 sm:max-w-[10.5rem] md:h-[5.5rem] md:max-w-[11.5rem] lg:pointer-events-none lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:h-[102%] lg:w-[min(37vw,29rem)] lg:max-w-none lg:object-bottom lg:opacity-100 xl:h-[106%]"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+
+          <div class="mt-6 flex flex-wrap items-center gap-4 lg:mt-10">
             <a
               href="/courses"
               class="btn-gradient-signal transition-all duration-300 hover:-translate-y-0.5"
@@ -69,15 +78,6 @@
             </a>
           </div>
         </div>
-
-        <img
-          src={instructorPortrait}
-          alt="Sketch of an airplane circling a globe representing Learn2FlyFlorida flight training"
-          class="pointer-events-none absolute bottom-0 right-0 hidden h-[102%] w-[min(37vw,29rem)] object-contain object-bottom lg:block xl:h-[106%]"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
       </div>
     </div>
   </div>
