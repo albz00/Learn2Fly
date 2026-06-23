@@ -57,6 +57,9 @@ export const contact = {
   emailHref: 'mailto:info@Learn2FlyFlorida.com',
   addressLine1: '219 SW Plantation Terrace',
   addressLine2: 'Lake City, Florida 32025',
+  mapsHref:
+    'https://www.google.com/maps/search/?api=1&query=219+SW+Plantation+Terrace,+Lake+City,+FL+32025',
+  googleReviewHref: 'https://www.google.com/search?q=learn2flyflorida&ie=UTF-8',
   airport: 'KLCQ · Lake City Gateway',
   city: 'Lake City, Florida',
 };
