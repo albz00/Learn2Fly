@@ -57,7 +57,12 @@
   >
     <nav class="site-shell grid h-[5.5rem] grid-cols-[auto_1fr_auto] items-center gap-4 lg:gap-8">
       <a href="/" onclick={close} class="flex shrink-0 items-center">
-        <img src={brand.logo} alt={brand.logoAlt} class="h-[3.25rem] w-auto sm:h-14" />
+        <img
+          src={brand.logo}
+          alt={brand.logoAlt}
+          class="h-[3.25rem] w-auto sm:h-14"
+          fetchpriority="high"
+        />
       </a>
 
       <ul class="hidden items-center justify-center xl:flex">

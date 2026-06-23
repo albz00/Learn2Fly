@@ -16,11 +16,8 @@
           class="h-full w-full object-cover"
           loading="lazy"
           decoding="async"
+          fetchpriority="low"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent"></div>
-        <div class="absolute left-6 top-6 label text-paper/70">TRAINING AIRCRAFT</div>
-        <div class="absolute bottom-6 left-6 font-mono text-sm text-paper">Piper Cherokee 140 · N833WT</div>
-        <div class="absolute bottom-6 right-6 label text-signal">$150 / HR WET</div>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
@@ -31,6 +28,7 @@
             class="h-full w-full object-cover"
             loading="lazy"
             decoding="async"
+            fetchpriority="low"
           />
         </div>
         <div class="radius-ui relative aspect-[4/3] overflow-hidden">
@@ -40,6 +38,7 @@
             class="h-full w-full object-cover"
             loading="lazy"
             decoding="async"
+            fetchpriority="low"
           />
         </div>
       </div>

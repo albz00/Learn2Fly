@@ -32,7 +32,12 @@
       <section class="lg:col-span-4" aria-labelledby="footer-brand">
         <h3 id="footer-brand" class="sr-only">Learn2FlyFlorida</h3>
         <a href="/" class="inline-flex">
-          <img src={brand.logo} alt={brand.logoAlt} class="h-12 w-auto brightness-0 invert" />
+          <img
+            src={brand.logo}
+            alt={brand.logoAlt}
+            class="h-12 w-auto brightness-0 invert"
+            fetchpriority="low"
+          />
         </a>
         <p class="mt-5 max-w-sm text-sm leading-relaxed text-paper/65">
           FAA Part 61 training in {contact.city}. Private, Instrument, Commercial, and CFI paths taught one-on-one

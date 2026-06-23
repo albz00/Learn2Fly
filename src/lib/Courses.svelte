@@ -21,6 +21,7 @@
               class="w-full object-cover"
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
             />
           </div>
         {/if}

@@ -60,6 +60,7 @@
             class="h-3.5 w-auto object-contain sm:h-4"
             loading="eager"
             decoding="async"
+            fetchpriority="high"
           />
         </span>
         <h1 class="display mt-6 max-w-3xl text-[clamp(1.95rem,4.5vw,3.25rem)] leading-[1.14] text-paper">
@@ -85,6 +86,7 @@
           class={`pointer-events-none absolute bottom-0 right-0 hidden h-[102%] w-[min(37vw,29rem)] object-contain object-bottom lg:block xl:h-[106%] ${imageClass}`}
           loading="eager"
           decoding="async"
+          fetchpriority="high"
         />
       {/if}
     </div>

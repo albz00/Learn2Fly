@@ -45,7 +45,14 @@
     aria-label="Loading {brand.name}"
   >
     <div class="loading-screen__inner">
-      <img src={brand.logo} alt="" class="loading-screen__logo" width="280" height="80" />
+      <img
+        src={brand.logo}
+        alt=""
+        class="loading-screen__logo"
+        width="280"
+        height="80"
+        fetchpriority="high"
+      />
       <div class="loading-screen__bar" aria-hidden="true">
         <span class="loading-screen__bar-fill"></span>
       </div>

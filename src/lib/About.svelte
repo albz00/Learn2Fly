@@ -18,6 +18,7 @@
               class="h-full w-full object-cover object-top"
               loading="lazy"
               decoding="async"
+              fetchpriority="low"
             />
           </div>
           <div class="mt-4">

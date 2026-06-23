@@ -76,6 +76,7 @@
           class="pointer-events-none absolute bottom-0 right-0 hidden h-[102%] w-[min(37vw,29rem)] object-contain object-bottom lg:block xl:h-[106%]"
           loading="eager"
           decoding="async"
+          fetchpriority="high"
         />
       </div>
     </div>
