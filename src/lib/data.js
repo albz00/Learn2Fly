@@ -1,4 +1,4 @@
-// Central content for the one-page site.
+// Central content for the Learn2FlyFlorida site.
 
 export const brand = {
   name: 'Learn2FlyFlorida',
@@ -8,9 +8,9 @@ export const brand = {
 
 export const seo = {
   siteUrl: 'https://learn2flyflorida.com',
-  title: 'Learn2FlyFlorida — Flight Training · Lake City, FL',
+  title: 'Learn2FlyFlorida | Flight Training in Lake City, FL',
   description:
-    'FAA Part 61 flight school in Lake City, Florida. Private Pilot, Instrument, Commercial and CFI training with one-on-one instruction at Lake City Gateway Airport (KLCQ).',
+    'FAA Part 61 flight training in Lake City, Florida. Private Pilot, Instrument, Commercial and CFI paths taught one-on-one at KLCQ.',
   ogImageAlt: '1969 Piper Cherokee 140 training aircraft at Lake City Gateway Airport, Florida',
 };
 
@@ -25,6 +25,8 @@ export const images = {
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/b4f2b8d7-bb37-4556-a370-1fd2a4bb1e00/public',
   aircraftCockpit:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/3ad5a228-0f95-4af1-0b5f-ad8634ccbd00/public',
+  ratesMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/e87211b1-39b5-4178-519e-6645941f0200/public',
 };
 
 export const instructor = {
@@ -38,34 +40,37 @@ export const contact = {
   phoneHref: 'tel:+13869651502',
   email: 'info@Learn2FlyFlorida.com',
   emailHref: 'mailto:info@Learn2FlyFlorida.com',
+  addressLine1: '219 SW Plantation Terrace',
+  addressLine2: 'Lake City, Florida 32025',
   airport: 'KLCQ · Lake City Gateway',
   city: 'Lake City, Florida',
 };
 
 export const nav = [
-  { label: 'Home', href: '#home' },
+  { label: 'Home', href: '/' },
   {
     label: 'About',
-    href: '#about',
+    href: '/about',
     children: [
-      { label: 'The Instructor', href: '#about' },
-      { label: 'Certificates & Ratings', href: '#about' },
-      { label: 'FAQ', href: '#faq' },
+      { label: 'The Instructor', href: '/about#instructor' },
+      { label: 'Certificates & Ratings', href: '/about#credentials' },
+      { label: 'FAQ', href: '/faq' },
     ],
   },
   {
     label: 'Courses',
-    href: '#courses',
+    href: '/courses',
     children: [
-      { label: 'Private Pilot', href: '#courses' },
-      { label: 'Instrument Rating', href: '#courses' },
-      { label: 'Commercial Pilot', href: '#courses' },
-      { label: 'Flight Instructor (CFI)', href: '#courses' },
+      { label: 'Private Pilot', href: '/courses#private-pilot' },
+      { label: 'Instrument Rating', href: '/courses#instrument-rating' },
+      { label: 'Commercial Pilot', href: '/courses#commercial-pilot' },
+      { label: 'Flight Instructor (CFI)', href: '/courses#flight-instructor-cfi' },
     ],
   },
-  { label: 'Rates', href: '#rates' },
-  { label: 'Aircraft', href: '#aircraft' },
-  { label: 'Resources', href: '#resources' },
+  { label: 'Rates', href: '/rates' },
+  { label: 'Aircraft', href: '/aircraft' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
 export const certificates = [
@@ -80,47 +85,51 @@ export const certificates = [
 
 export const courses = [
   {
+    slug: 'private-pilot',
     name: 'Private Pilot',
-    hours: '45 to 55 hrs',
+    hours: 'Typical: 45 to 55 hrs',
     summary:
-      'Your first certificate and the foundation of every rating that follows. Most students finish well inside the national average.',
+      'The foundation certificate for safe personal flying and every rating that comes next. Training is structured to keep momentum and avoid wasted flights.',
     points: [
-      'Pre-solo and solo flight training',
-      'Cross-country navigation & night flying',
-      'FAA written, oral and practical (checkride) prep',
+      'Pre-solo to solo progression with clear benchmarks',
+      'Cross-country, night, and towered/non-towered operations',
+      'Written, oral, and practical exam preparation',
     ],
   },
   {
+    slug: 'instrument-rating',
     name: 'Instrument Rating',
-    hours: '40 hrs',
+    hours: 'Typical: 40 hrs',
     summary:
-      'Fly confidently in the clouds and the system. Up to 10 hours may be flown in the Redbird simulator, with no aircraft or instructor rental on those hours.',
+      'Build real IFR capability, not just test prep. Simulator integration lowers cost while improving procedures and scan discipline.',
     points: [
-      'Approaches, holds and IFR enroute procedures',
-      'Redbird FMX simulator integration',
-      'Real-world ATC and flight-plan workflow',
+      'Approaches, holds, departures, arrivals, and enroute workflow',
+      'Up to 10 hours in the Redbird FMX toward the rating',
+      'If signed off and you do not pass, retraining in failed areas is covered',
     ],
   },
   {
+    slug: 'commercial-pilot',
     name: 'Commercial Pilot',
-    hours: 'Build & refine',
+    hours: 'Skill refinement',
     summary:
-      'Sharpen your stick-and-rudder skills to commercial standards and open the door to flying for compensation.',
+      'Refine aircraft control, precision, and judgement to commercial standards so you can fly for compensation with confidence.',
     points: [
-      'Commercial maneuvers to ACS tolerances',
-      'Complex / high-performance familiarization',
-      'Career and time-building guidance',
+      'Commercial maneuvers to ACS standards',
+      'Professional decision-making and scenario-driven training',
+      'Time-building strategy and next-rating planning',
     ],
   },
   {
+    slug: 'flight-instructor-cfi',
     name: 'Flight Instructor · CFI',
-    hours: 'Teach to fly',
+    hours: 'Instructor prep',
     summary:
-      'Learn to teach from a Gold Seal flight instructor. Turn your skills into the most valuable rating you can hold.',
+      'Train to teach from a Gold Seal instructor and convert your experience into the rating that unlocks your next career step.',
     points: [
-      'Fundamentals of instruction',
-      'Lesson planning and the teaching environment',
-      'Spin endorsement & CFI checkride prep',
+      'Fundamentals of Instruction and lesson delivery',
+      'Lesson planning, endorsements, and student risk management',
+      'Spin endorsement and focused CFI checkride preparation',
     ],
   },
 ];
@@ -128,34 +137,62 @@ export const courses = [
 export const rates = [
   {
     item: 'Piper Cherokee 140',
-    detail: 'Aircraft rental, wet (fuel & oil included on local flights)',
+    detail: 'Aircraft rental in our primary trainer',
     price: '$150',
-    unit: '/ hr',
+    unit: '/ hr wet',
   },
   {
-    item: 'Flight Instruction',
-    detail: 'Dual instruction given in our aircraft',
+    item: 'Piper Cherokee 140',
+    detail: 'Dry option for qualified renters',
+    price: '$110',
+    unit: '/ hr dry',
+  },
+  {
+    item: 'Flight Instruction (Our Aircraft)',
+    detail: 'One-on-one instruction in school aircraft',
     price: '$50',
     unit: '/ hr',
   },
   {
+    item: 'Flight Instruction (Owner Aircraft)',
+    detail: 'Instruction provided in customer-owned aircraft',
+    price: '$75',
+    unit: '/ hr',
+  },
+  {
+    item: 'Ground Instruction',
+    detail: 'Ground briefings and targeted oral prep',
+    price: '$25',
+    unit: '/ hr',
+  },
+  {
     item: 'Redbird FMX Simulator',
-    detail: 'Loggable toward up to 10 hrs of the instrument rating',
-    price: 'Incl.',
-    unit: 'w/ course',
+    detail: 'Procedural and instrument proficiency training',
+    price: '$35',
+    unit: '/ hr',
+  },
+  {
+    item: 'Discovery Flight Lesson',
+    detail: 'Introductory lesson for new students',
+    price: '$159',
+    unit: 'flat',
   },
 ];
 
 export const rateNotes = [
-  'Fuel and oil purchases are reimbursed up to current published rates at KLCQ.',
+  'Fuel and oil purchases are reimbursed up to currently published rates at KLCQ.',
   'Aircraft scheduled overnight away from base carries a 3-hour-per-day minimum.',
-  'Overnight / away-from-base rental requires prior approval.',
+  'Overnight or away-from-base rental requires prior approval.',
+  'All new renters complete a check flight (minimum one hour ground and one hour flight) before solo authorization.',
 ];
 
 export const aircraftSpecs = [
   { k: 'Model', v: 'Piper Cherokee 140' },
   { k: 'Year', v: '1969' },
-  { k: 'Avionics', v: 'All-new panel' },
+  { k: 'Primary Display', v: 'uAvionix AV-30' },
+  { k: 'Navigator', v: 'Garmin 430' },
+  { k: 'Autopilot', v: 'BendixKing AeroCruze' },
+  { k: 'ADSB', v: 'uAvionix ADS-B Out' },
   { k: 'Interior', v: 'Refurbished' },
   { k: 'Exhaust', v: 'PowerFlow' },
   { k: 'Rate', v: '$150 / hr wet' },
@@ -225,26 +262,26 @@ export const testimonials = [
 export const faqs = [
   {
     q: 'What day of the week does training start?',
-    a: 'Training can start any day of the week. If you are interested in training we can find a convenient start time for you. Since designated examiners do not generally work on Sundays, I like to start so your training doesn’t end with a Sunday practical exam.',
+    a: 'Training can start any day of the week. We schedule around your availability and your examiner timeline so training stays efficient from day one.',
   },
   {
     q: 'What is a Practical Exam?',
-    a: 'The FAA term for a checkride is the Practical Exam. Most FAA practical exams consist of three phases. Phase one is check-in and verification of identity, written exam results and eligibility to take the practical exam you have applied for. Phase two is the oral exam — most oral exams take between two and four hours, though the oral technically never ends and continues through phase three. Phase three is the flight test, which consists of the maneuvers and flying skills outlined in the FAA Airman Certification Standards.',
+    a: 'A practical exam is the FAA checkride. It includes check-in and eligibility review, an oral exam, and a flight test based on the Airman Certification Standards for your rating.',
   },
   {
     q: 'Does the cost have to be paid in advance?',
     a: 'No, you can pay as you go.',
   },
   {
-    q: 'Do you guarantee a student will leave with an instrument rating?',
-    a: 'No. My guarantee is that once I sign you off for a practical exam you will pass, or I will re-train you in the areas you failed for free. Most students complete the course in the amount of time and cost outlined in my course descriptions. However, some students may need additional training before they are ready to sit for their practical exam. I will do everything I can to get you done on-time and on budget.',
+    q: 'Do you guarantee I will pass my checkride?',
+    a: 'No school can guarantee a pass before training is complete. The promise is this: once you are signed off as checkride-ready, if you receive an unsatisfactory result, retraining in the failed areas is provided at no additional training cost.',
   },
   {
     q: 'Will we fly in actual instrument conditions?',
-    a: 'Yes! However, for safety I require a ceiling no lower than 800 feet and visibility of 3 miles or better. We also must be able to file a legal alternate within our fuel requirements. In addition, no thunderstorms or icing can be forecast or present when we fly. Depending on the time of year, you may get a lot of actual time or none.',
+    a: 'Yes, when conditions support safe training. We use conservative weather limits, legal alternates, and strict thunderstorm/icing avoidance so you gain real experience without gambling risk.',
   },
   {
-    q: 'Do I have to have my written exam done before I start training?',
-    a: 'Yes. The written exam can be easily self-studied before you get here. For the most part it is an exercise in rote memorization, and you will not have the time or energy to study for it once you are here and flight training. I recommend the King Schools Instrument Prep Course.',
+    q: 'Do I need the written exam complete before starting?',
+    a: 'For instrument training, yes. Completing the written first keeps your flight block focused on flying and checkride prep instead of trying to split attention between two workloads.',
   },
 ];

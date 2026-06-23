@@ -1,88 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import 'tailwindcss';
 
-/*
-  Learn2FlyFlorida design system
-  ----------------------------------
-  Typography concept:
-    - Space Grotesk : sleek geometric display headings
-    - Inter         : quiet, legible body copy
-    - B612 Mono     : the "flight font", B612 was commissioned by Airbus for
-                      cockpit display screens. Used here for all technical
-                      labels, flight-data figures and tags.
-*/
-
 @theme {
-  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'B612 Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --font-display: Barlow, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-body: Barlow, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-mono: Barlow, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  --color-paper: #f2efe6;
-  --color-paper-2: #eae6d9;
-  --color-ink: #10151b;
-  --color-ink-2: #1a212a;
-  --color-soft: #59626d;
-  --color-line: #d7d2c4;
-  --color-line-dark: #2a333d;
-  --color-accent: #1b3b5a;
-  --color-signal: #d47a28;
+  --color-paper: #ffffff;
+  --color-paper-2: #f6f9ff;
+  --color-paper-3: #edf3ff;
+  --color-ink: #122941;
+  --color-ink-2: #1d3b5e;
+  --color-soft: #5f7287;
+  --color-line: #d7e3f0;
+  --color-line-dark: #3e5f81;
+  --color-accent: #1f5f99;
+  --color-accent-2: #2f76b6;
+  --color-signal: #ef9f52;
+  --radius-ui: 0.85rem;
+  --radius-btn: 9999px;
+  --radius-card: 1.1rem;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 7.5rem;
   }
 
   body {
-    background-color: var(--color-paper);
+    background-color: #f5f8fc;
     color: var(--color-ink);
     font-family: var(--font-body);
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--color-paper-3);
+  }
+
+  *::-webkit-scrollbar {
+    width: 0.65rem;
+    height: 0.65rem;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-paper-3);
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 2px solid var(--color-paper-3);
+    border-radius: 999px;
+    background: linear-gradient(160deg, var(--color-accent-2) 0%, var(--color-accent) 100%);
+    transition: background 0.2s ease;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(160deg, #4490d4 0%, #256ba8 100%);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: var(--color-paper-3);
+  }
+
   ::selection {
-    background: var(--color-ink);
+    background: var(--color-accent);
     color: var(--color-paper);
+  }
+
+  button {
+    border-radius: var(--radius-btn);
+    border: 0;
+    outline: none;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  a[class*='btn-gradient-'],
+  button[class*='btn-gradient-'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-btn);
+    padding: 0.78rem 1.55rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  a:focus,
+  a:focus-visible,
+  button:focus,
+  button:focus-visible {
+    outline: none;
+    box-shadow: none;
   }
 }
 
 @layer components {
-  /* tracked monospace eyebrow / flight-data label */
+  .site-shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1240px;
+    padding-inline: clamp(1rem, 3.5vw, 2.1rem);
+  }
+
+  .section-space {
+    padding-block: clamp(4.75rem, 7vw, 7.5rem);
+  }
+
+  .section-flow {
+    margin-top: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .section-flow-tight {
+    margin-top: clamp(1.5rem, 2.4vw, 2.25rem);
+  }
+
+  .page-flow {
+    background-color: #f5f8fc;
+  }
+
+  .surface-paper {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(215, 227, 240, 0.92);
+    box-shadow: 0 12px 26px -22px rgba(9, 32, 59, 0.4);
+  }
+
+  .surface-paper-soft {
+    background-color: rgba(247, 251, 255, 0.94);
+  }
+
+  .section-band {
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(215, 227, 240, 0.74);
+    border-bottom: 1px solid rgba(215, 227, 240, 0.74);
+  }
+
+  .card-elevated {
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(215, 227, 240, 0.86);
+    background: rgba(255, 255, 255, 0.99);
+    box-shadow: 0 16px 28px -22px rgba(11, 34, 61, 0.42);
+  }
+
+  .badge-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-radius: 0.45rem;
+    border: 1px solid rgba(215, 227, 240, 0.9);
+    background: rgba(255, 255, 255, 0.96);
+    padding: 0.35rem 0.7rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(31, 54, 79, 0.9);
+  }
+
+  .micro-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .micro-head::before,
+  .micro-head::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: clamp(2.35rem, 8vw, 3.1rem);
+    border-radius: 999px;
+    background: var(--color-signal);
+    opacity: 0.95;
+  }
+
   .label {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
   }
 
   .display {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
   }
 
   .hairline {
     border-color: var(--color-line);
   }
 
-  /* thin animated underline used on nav + links */
+  .radius-ui {
+    border-radius: var(--radius-ui);
+  }
+
+  .btn-gradient-accent {
+    border: 0;
+    color: var(--color-paper);
+    background-color: #215f98;
+    background-image: linear-gradient(135deg, #3a84c7 0%, #215f98 100%);
+    box-shadow: 0 14px 28px -18px rgba(33, 95, 152, 0.82);
+  }
+  .btn-gradient-accent:hover {
+    background-image: linear-gradient(135deg, #4490d4 0%, #256ba8 100%);
+  }
+
+  .btn-gradient-signal {
+    border: 0;
+    color: var(--color-paper);
+    background-color: #ef9f52;
+    background-image: linear-gradient(135deg, #f5b173 0%, #ef9f52 100%);
+    box-shadow: 0 14px 28px -18px rgba(239, 159, 82, 0.82);
+  }
+  .btn-gradient-signal:hover {
+    background-image: linear-gradient(135deg, #f7bb80 0%, #f3a664 100%);
+  }
+
+  .btn-gradient-paper {
+    border: 0;
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    background-image: linear-gradient(135deg, #ffffff 0%, #edf4ff 100%);
+    box-shadow: 0 12px 24px -18px rgba(9, 32, 59, 0.28);
+  }
+  .btn-gradient-paper:hover {
+    background-image: linear-gradient(135deg, #ffffff 0%, #e4eeff 100%);
+  }
+
+  .btn-gradient-light {
+    border: 0;
+    color: var(--color-paper);
+    background-color: rgba(255, 255, 255, 0.14);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.1) 100%);
+    box-shadow: 0 12px 24px -18px rgba(9, 32, 59, 0.32);
+  }
+  .btn-gradient-light:hover {
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.16) 100%);
+  }
+
+  .bg-flight-night {
+    background: linear-gradient(170deg, #142f4a 6%, #1e4468 56%, #295679 100%);
+  }
+
   .ulink {
-    position: relative;
+    transition: color 0.2s ease;
   }
-  .ulink::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    height: 1px;
-    width: 0;
-    background: currentColor;
-    transition: width 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
-  }
-  .ulink:hover::after {
-    width: 100%;
+  .ulink:hover {
+    color: var(--color-accent-2);
   }
 }
 
@@ -103,5 +280,106 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+body.is-loading {
+  overflow: hidden;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.55s ease,
+    visibility 0.55s ease;
+}
+
+.loading-screen--fade {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-screen__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: 1.5rem;
+  animation: loading-rise 0.7s ease both;
+}
+
+.loading-screen__logo {
+  width: min(17.5rem, 72vw);
+  height: auto;
+  filter: drop-shadow(0 10px 22px rgba(18, 41, 65, 0.1));
+  animation: loading-logo-pulse 2.2s ease-in-out infinite;
+}
+
+.loading-screen__bar {
+  width: min(12rem, 52vw);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(215, 227, 240, 0.85);
+}
+
+.loading-screen__bar-fill {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ef9f52 0%, #f5b173 100%);
+  animation: loading-bar-slide 1.15s ease-in-out infinite;
+}
+
+@keyframes loading-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading-logo-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(0.985);
+  }
+}
+
+@keyframes loading-bar-slide {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen__inner,
+  .loading-screen__logo,
+  .loading-screen__bar-fill {
+    animation: none;
+  }
+
+  .loading-screen {
+    transition-duration: 0.01ms;
   }
 }

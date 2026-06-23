@@ -5,13 +5,16 @@
 </script>
 
 <section id="courses" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-  <SectionHead title="Every certificate, one flight line." />
+  <SectionHead kicker="Our Courses" title="Training paths built for real completion." />
 
-  <div class="mt-14 grid gap-px border border-line bg-line md:grid-cols-2">
+  <div class="radius-ui mt-14 grid gap-5 md:grid-cols-2">
     {#each courses as c}
-      <article class="group flex flex-col bg-paper p-8 transition-colors hover:bg-paper-2/60 lg:p-10">
+      <article
+        id={c.slug}
+        class="card-elevated group flex flex-col p-8 transition-colors hover:bg-paper-2/55 lg:p-10"
+      >
         {#if c.image}
-          <div class="mb-6 overflow-hidden rounded-xl border border-line">
+          <div class="radius-ui mb-6 overflow-hidden border border-line">
             <img
               src={c.image}
               alt={c.imageAlt}
@@ -40,10 +43,10 @@
         </ul>
 
         <a
-          href="#contact"
-          class="ulink mt-8 inline-flex w-fit text-sm text-ink"
+          href="/contact"
+          class="ulink mt-8 inline-flex w-fit text-sm font-medium text-accent"
         >
-          Start this training →
+          Start this training &#8594;
         </a>
       </article>
     {/each}

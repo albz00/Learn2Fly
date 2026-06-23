@@ -9,35 +9,39 @@
   }
 
   const field =
-    'mt-2 w-full border-b border-line bg-transparent pb-2 text-base text-ink outline-none transition-colors placeholder:text-soft/50 focus:border-signal';
+    'mt-2 w-full radius-ui border border-line bg-paper-2/45 px-3.5 py-2.5 text-base text-ink outline-none transition-colors placeholder:text-soft/60 focus:border-accent focus:bg-paper';
 </script>
 
-<section id="contact" class="border-t border-line bg-paper">
-  <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead title="Ready when you are." />
+<section id="contact" class="border-t border-line">
+  <div class="site-shell section-space">
+    <SectionHead kicker="Contact" title="Build your training plan directly with your instructor." />
 
-    <div class="mt-14 grid gap-14 lg:grid-cols-12 lg:gap-16">
+    <div class="section-flow grid gap-12 lg:grid-cols-12 lg:gap-14">
       <!-- contact details -->
       <div class="lg:col-span-5">
-        <p class="max-w-md text-lg leading-relaxed text-soft">
-          Reserve a training slot, schedule a discovery flight, or just ask a question. You will speak
-          directly with your instructor, not a call center.
+        <p class="max-w-md text-base leading-relaxed text-soft sm:text-lg">
+          Reserve a slot, schedule a discovery lesson, or ask where to start. You will speak directly with the
+          person who will train you, not a front desk or call center.
         </p>
 
-        <dl class="mt-10 border-t border-line">
-          <div class="border-b border-line py-6">
+        <dl class="section-flow-tight grid gap-4">
+          <div class="surface-paper-soft radius-ui border border-line p-5">
             <dt class="label text-soft">Phone</dt>
             <dd class="mt-2">
-              <a href={contact.phoneHref} class="display text-2xl text-ink ulink sm:text-3xl">{contact.phone}</a>
+              <a href={contact.phoneHref} class="display text-2xl text-ink ulink sm:text-[1.7rem]">
+                {contact.phone}
+              </a>
             </dd>
           </div>
-          <div class="border-b border-line py-6">
+          <div class="surface-paper-soft radius-ui border border-line p-5">
             <dt class="label text-soft">Email</dt>
             <dd class="mt-2">
-              <a href={contact.emailHref} class="display text-2xl text-ink ulink sm:text-3xl">{contact.email}</a>
+              <a href={contact.emailHref} class="display text-2xl text-ink ulink sm:text-[1.7rem]">
+                {contact.email}
+              </a>
             </dd>
           </div>
-          <div class="border-b border-line py-6">
+          <div class="surface-paper-soft radius-ui border border-line p-5">
             <dt class="label text-soft">Based at</dt>
             <dd class="mt-2 font-mono text-sm text-ink">{contact.airport} · {contact.city}</dd>
           </div>
@@ -46,7 +50,9 @@
 
       <!-- form -->
       <div class="lg:col-span-7">
-        <div class="rounded-2xl border border-line border-t-2 border-t-signal bg-paper p-8 shadow-[0_30px_80px_-55px_rgba(16,21,27,0.6)] sm:p-10">
+        <div
+          class="card-elevated p-8 sm:p-10"
+        >
           {#if sent}
             <div class="flex min-h-[24rem] flex-col items-start justify-center">
               <span class="h-3 w-3 bg-signal"></span>
@@ -99,7 +105,7 @@
 
               <button
                 type="submit"
-                class="w-full rounded-lg bg-ink px-6 py-4 text-sm text-paper transition-colors hover:bg-signal"
+                class="btn-gradient-accent w-full transition-all duration-300 hover:-translate-y-0.5"
               >
                 Send request &#8594;
               </button>

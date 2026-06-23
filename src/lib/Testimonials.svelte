@@ -7,15 +7,17 @@
   const rest = testimonials.slice(1);
 </script>
 
-<section class="border-t border-line bg-paper-2/40">
-  <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead title="Pilots who started exactly where you are." />
+<section class="border-t border-line">
+  <div class="site-shell section-space">
+    <SectionHead kicker="Student Reviews" title="Students who wanted structure, not guesswork." />
 
     <!-- featured -->
-    <figure class="relative mt-14 overflow-hidden border border-line bg-paper p-8 shadow-[0_30px_80px_-50px_rgba(16,21,27,0.55)] sm:p-12 lg:p-16">
-      <div class="absolute right-8 top-2 font-display text-[9rem] leading-none text-signal/15 sm:text-[12rem]">&ldquo;</div>
+    <figure
+      class="card-elevated section-flow relative overflow-hidden p-8 sm:p-12 lg:p-14"
+    >
+      <div class="absolute right-7 top-4 font-display text-[4rem] leading-none text-signal/30 sm:text-[5rem]">&ldquo;</div>
       <StarRating rating={featured.rating} size="md" />
-      <blockquote class="relative mt-5 max-w-3xl text-2xl font-light leading-snug text-ink sm:text-3xl lg:text-[2.25rem]">
+      <blockquote class="relative mt-5 max-w-3xl text-2xl font-light leading-snug text-ink sm:text-3xl lg:text-[2.05rem]">
         {featured.quote}
       </blockquote>
       <figcaption class="mt-8 flex items-center gap-4">
@@ -26,9 +28,11 @@
     </figure>
 
     <!-- supporting -->
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
+    <div class="section-flow-tight grid gap-6 md:grid-cols-3">
       {#each rest as t}
-        <figure class="flex flex-col justify-between border-t-2 border-signal bg-paper p-7 shadow-[0_20px_60px_-50px_rgba(16,21,27,0.5)] transition-transform duration-300 hover:-translate-y-1">
+        <figure
+          class="card-elevated radius-ui flex flex-col justify-between p-7 transition-all duration-300 hover:-translate-y-1"
+        >
           <StarRating rating={t.rating} />
           <blockquote class="mt-4 text-base leading-relaxed text-ink/85">
             {t.quote}

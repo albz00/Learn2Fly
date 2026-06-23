@@ -4,16 +4,16 @@
   import { rates, rateNotes } from './data.js';
 </script>
 
-<section id="rates" class="border-y border-line bg-paper-2/50">
+<section id="rates" class="section-band">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead title="Honest, pay-as-you-go pricing." />
+    <SectionHead kicker="Rates & Policies" title="Clear rates and policies, up front." />
 
     <div class="mt-14 grid gap-14 lg:grid-cols-12">
       <div class="lg:col-span-8">
-        <div class="border-t border-line">
+        <div class="card-elevated divide-y divide-line">
           {#each rates as r}
-            <div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-line py-7">
-              <div class="min-w-[14rem] flex-1">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 px-7 py-7">
+              <div class="min-w-[14rem] flex-1 pr-2">
                 <h3 class="display text-2xl text-ink">{r.item}</h3>
                 <p class="mt-1.5 text-sm leading-relaxed text-soft">{r.detail}</p>
               </div>
@@ -27,7 +27,7 @@
       </div>
 
       <aside class="lg:col-span-4">
-        <div class="border border-line bg-paper p-7">
+        <div class="card-elevated p-7">
           <div class="label mb-5 text-signal">Fine Print</div>
           <ul class="space-y-4">
             {#each rateNotes as note}

@@ -3,20 +3,20 @@
   import { resources } from './data.js';
 </script>
 
-<section id="resources" class="bg-ink text-paper">
+<section id="resources" class="bg-flight-night text-paper">
   <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
-    <SectionHead dark title="Everything you need, in one place." />
+    <SectionHead dark kicker="Student Toolkit" title="The references your training actually uses." />
 
     <p class="mt-8 max-w-xl text-base leading-relaxed text-paper/65">
-      A curated shelf of the official handbooks, standards and tools your training will actually rely on.
-      Bookmark this page. You will come back to it often.
+      This is the student toolkit: FAA handbooks, ACS standards, medical and IACRA links, and day-of-flight
+      weather resources. Keep it open and build your workflow around it.
     </p>
 
     <div class="mt-14 grid gap-6 lg:grid-cols-3">
       {#each resources as col}
-        <div class="flex flex-col border border-line-dark bg-ink-2/60 p-7 transition-colors hover:border-signal/60 lg:p-8">
+        <div class="radius-ui flex flex-col border border-paper/14 bg-ink-2/62 p-7 backdrop-blur-sm transition-colors lg:p-8">
           <div class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 bg-signal"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-signal"></span>
             <h3 class="display text-xl text-paper">{col.group}</h3>
           </div>
 
@@ -27,7 +27,7 @@
                   href={it.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group flex items-center justify-between gap-4 border-t border-line-dark py-4 transition-colors hover:bg-paper/5"
+                  class="group flex items-center justify-between gap-4 border-t border-line-dark py-4 transition-colors hover:bg-paper/6"
                 >
                   <span class="min-w-0 flex-1">
                     <span class="block text-[0.95rem] leading-snug text-paper transition-transform duration-300 group-hover:translate-x-1">
