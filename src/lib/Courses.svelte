@@ -4,17 +4,17 @@
   import { courses } from './data.js';
 </script>
 
-<section id="courses" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+<section id="courses" class="site-shell section-space">
   <SectionHead kicker="Our Courses" title="Training paths built for real completion." />
 
-  <div class="radius-ui mt-14 grid gap-5 md:grid-cols-2">
+  <div class="radius-ui section-flow grid gap-5 md:grid-cols-2">
     {#each courses as c}
       <article
         id={c.slug}
         class="card-elevated group flex flex-col p-8 transition-colors hover:bg-paper-2/55 lg:p-10"
       >
         {#if c.image}
-          <div class="radius-ui mb-6 overflow-hidden border border-line">
+          <div class="radius-ui mb-6 overflow-hidden">
             <img
               src={c.image}
               alt={c.imageAlt}
@@ -41,6 +41,19 @@
             </li>
           {/each}
         </ul>
+
+        {#if c.prereqs}
+          <div class="mt-7 border-t border-line pt-6">
+            <div class="label mb-4 text-signal">Prerequisites</div>
+            <ul class="flex flex-wrap gap-2">
+              {#each c.prereqs as pre}
+                <li class="radius-ui bg-paper-2/70 px-3 py-1.5 text-[0.85rem] leading-snug text-soft">
+                  {pre}
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
 
         <a
           href="/contact"

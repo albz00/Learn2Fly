@@ -1,5 +1,5 @@
 <script>
-  import { brand, contact } from './data.js';
+  import { brand, contact, instructor } from './data.js';
 
   const year = new Date().getFullYear();
 
@@ -70,7 +70,7 @@
     </div>
 
     <div class="flex flex-col items-start justify-between gap-3 pt-8 sm:flex-row sm:items-center">
-      <span class="label text-paper/40">© {year} {brand.name}. All rights reserved.</span>
+      <span class="label text-paper/40">© {year} {brand.name} · {instructor.business}. All rights reserved.</span>
       <span class="label text-paper/40">Lake City · Florida · USA</span>
     </div>
   </div>

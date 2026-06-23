@@ -4,19 +4,19 @@
 </script>
 
 <section id="resources" class="bg-flight-night text-paper">
-  <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+  <div class="site-shell section-space">
     <SectionHead dark kicker="Student Toolkit" title="The references your training actually uses." />
 
-    <p class="mt-8 max-w-xl text-base leading-relaxed text-paper/65">
+    <p class="section-flow max-w-xl text-base leading-relaxed text-paper/65">
       This is the student toolkit: FAA handbooks, ACS standards, medical and IACRA links, and day-of-flight
       weather resources. Keep it open and build your workflow around it.
     </p>
 
-    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+    <div class="section-flow-tight grid gap-6 lg:grid-cols-3">
       {#each resources as col}
-        <div class="radius-ui flex flex-col border border-paper/14 bg-ink-2/62 p-7 backdrop-blur-sm transition-colors lg:p-8">
+        <div class="radius-ui flex flex-col bg-ink-2/62 p-7 backdrop-blur-sm lg:p-8">
           <div class="flex items-center gap-3">
-            <span class="h-2.5 w-2.5 rounded-full bg-signal"></span>
+            <span class="h-2.5 w-2.5 bg-signal"></span>
             <h3 class="display text-xl text-paper">{col.group}</h3>
           </div>
 

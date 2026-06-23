@@ -28,16 +28,18 @@
   ];
 </script>
 
-<section id="legal" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+<section id="legal" class="site-shell section-space">
   <div class="max-w-3xl">
-    <div class="label text-accent/75">Legal</div>
-    <h2 class="display text-4xl text-ink sm:text-5xl">Legal & compliance information</h2>
+    <div class="micro-head text-ink/86">
+      <span class="label">Legal</span>
+    </div>
+    <h2 class="display mt-4 text-3xl text-ink sm:text-4xl md:text-5xl">Legal & compliance information</h2>
     <p class="mt-5 text-base leading-relaxed text-soft">
       This page outlines the standard policies for privacy, terms, accessibility, and operating safety.
     </p>
   </div>
 
-  <div class="mt-12 grid gap-5">
+  <div class="section-flow grid gap-5">
     {#each policySections as policy}
       <article id={policy.id} class="card-elevated p-6 lg:p-7">
         <h3 class="display text-2xl text-ink">{policy.title}</h3>

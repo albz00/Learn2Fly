@@ -1,16 +1,44 @@
 <script>
+  import { onMount } from 'svelte';
   import { images } from './data.js';
 
   const instructorPortrait =
-    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/f66b1441-e406-4cf7-35ab-24f8a5e48700/public';
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/4d3f5e2d-c440-4a6c-19c7-fad6ed736400/public';
+
+  const heroSlides = [
+    images.aircraftExterior,
+    images.planeHero,
+    images.aircraftCockpit,
+  ];
+
+  const heroOverlay =
+    'linear-gradient(120deg, rgba(8,24,40,0.92) 14%, rgba(12,36,58,0.76) 58%, rgba(14,40,64,0.86) 100%)';
+
+  let activeSlide = 0;
+
+  onMount(() => {
+    heroSlides.forEach((src) => {
+      const preload = new Image();
+      preload.src = src;
+    });
+
+    const interval = setInterval(() => {
+      activeSlide = (activeSlide + 1) % heroSlides.length;
+    }, 6000);
+
+    return () => clearInterval(interval);
+  });
 </script>
 
 <section id="home" class="bg-flight-night relative overflow-hidden text-paper">
-  <div
-    class="absolute inset-0 bg-cover bg-center"
-    style={`background-image:linear-gradient(120deg, rgba(11,31,51,0.86) 14%, rgba(17,46,74,0.64) 58%, rgba(20,52,82,0.78) 100%),url('${images.aircraftExterior}')`}
-    aria-hidden="true"
-  ></div>
+  <div class="absolute inset-0" aria-hidden="true">
+    {#each heroSlides as slide, i}
+      <div
+        class="absolute inset-0 bg-cover bg-center transition-opacity duration-[1500ms] ease-in-out"
+        style={`background-image:${heroOverlay},url('${slide}');opacity:${i === activeSlide ? 1 : 0}`}
+      ></div>
+    {/each}
+  </div>
   <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(13,36,59,0.3),rgba(13,36,59,0.06))]" aria-hidden="true"></div>
 
   <div class="site-shell relative">
@@ -22,8 +50,13 @@
           </h1>
 
           <p class="mt-8 max-w-xl text-lg leading-relaxed text-paper/82">
-            Learn2FlyFlorida delivers private, instrument, commercial, and CFI training through one instructor,
-            one proven aircraft, and standards designed for real-world confidence.
+            Learn2FlyFlorida is an FAA Part 61 flight school in Lake City, providing instruction for every
+            pilot certificate, including Private Pilot, Instrument rating, Commercial Pilot, and Certified Flight Instructor.
+          </p>
+
+          <p class="mt-4 max-w-xl text-base leading-relaxed text-paper/72">
+            Career-bound or flying for yourself, a solid Private Pilot foundation is the key to your
+            Instrument and Commercial certificates.
           </p>
 
           <div class="mt-10 flex flex-wrap items-center gap-4">
@@ -44,8 +77,8 @@
 
         <img
           src={instructorPortrait}
-          alt="Learn2FlyFlorida brand mark"
-          class="pointer-events-none absolute bottom-0 right-0 hidden h-[102%] w-auto max-w-[min(37vw,29rem)] object-contain object-bottom drop-shadow-[0_18px_40px_rgba(4,16,28,0.55)] lg:block xl:h-[106%]"
+          alt="Sketch of an airplane circling a globe representing Learn2FlyFlorida flight training"
+          class="pointer-events-none absolute bottom-0 right-0 hidden h-[102%] w-[min(37vw,29rem)] object-contain object-bottom lg:block xl:h-[106%]"
           loading="eager"
           decoding="async"
         />

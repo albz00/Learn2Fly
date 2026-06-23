@@ -26,6 +26,8 @@
           'No rotating roster and no generic lesson flow. You work directly with an airline-experienced, Gold Seal instructor from first lesson to checkride.',
         primaryCta: { href: '/courses', label: 'View training paths' },
         secondaryCta: { href: '/contact', label: 'Speak with instructor' },
+        image: images.aboutMark,
+        imageAlt: 'Ralph, Gold Seal flight instructor at Learn2FlyFlorida, in uniform',
       },
       seo: {
         title: `About | ${brand.name}`,
@@ -43,6 +45,8 @@
           'Course blocks are built around practical outcomes, clear milestones, and checkride readiness rather than just logging time.',
         primaryCta: { href: '/contact', label: 'Reserve a training slot' },
         secondaryCta: { href: '/rates', label: 'Review rates' },
+        image: images.coursesMark,
+        imageAlt: 'Graduation cap and open book mark representing Learn2FlyFlorida training courses',
       },
       seo: {
         title: `Courses | ${brand.name}`,
@@ -79,6 +83,8 @@
           'You train in one airplane that is modernized, well understood, and consistently available, so your learning stays focused and efficient.',
         primaryCta: { href: '/rates', label: 'See aircraft rates' },
         secondaryCta: { href: '/contact', label: 'Ask about scheduling' },
+        image: images.aircraftProfile,
+        imageAlt: 'Learn2FlyFlorida 1969 Piper Cherokee 140 N833WT',
       },
       seo: {
         title: `Aircraft | ${brand.name}`,
@@ -96,6 +102,8 @@
           'This library keeps FAA references, weather tools, and pre-training requirements in one place so you can prep with the right material every time.',
         primaryCta: { href: '/faq', label: 'Read common questions' },
         secondaryCta: { href: '/contact', label: 'Ask before you start' },
+        image: images.resourcesMark,
+        imageAlt: 'Stack of books mark representing Learn2FlyFlorida training resources',
       },
       seo: {
         title: `Resources | ${brand.name}`,
@@ -113,6 +121,8 @@
           'Before committing to training, review how pacing, checkrides, and written-exam prep are handled so you know exactly what to expect.',
         primaryCta: { href: '/contact', label: 'Ask your question directly' },
         secondaryCta: { href: '/courses', label: 'Compare course options' },
+        image: images.faqMark,
+        imageAlt: 'Speech bubbles with a question mark representing Learn2FlyFlorida FAQ',
       },
       seo: {
         title: `FAQ | ${brand.name}`,
@@ -130,6 +140,8 @@
           'Use the form, call, or email to reserve a training slot, schedule a discovery flight, or map your path from private pilot through CFI.',
         primaryCta: { href: '/courses', label: 'View course options' },
         secondaryCta: { href: '/rates', label: 'Review pricing first' },
+        image: images.contactMark,
+        imageAlt: 'Envelope and phone icon representing contacting Learn2FlyFlorida',
       },
       seo: {
         title: `Contact | ${brand.name}`,

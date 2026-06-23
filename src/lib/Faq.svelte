@@ -7,10 +7,10 @@
 </script>
 
 <section id="faq" class="border-t border-line">
-  <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+  <div class="site-shell section-space">
     <SectionHead kicker="FAQ" title="Questions answered before you spend." />
 
-    <div class="card-elevated mt-12 divide-y divide-line">
+    <div class="card-elevated section-flow divide-y divide-line">
       {#each faqs as item, i}
         <div class="px-6 sm:px-8">
           <button

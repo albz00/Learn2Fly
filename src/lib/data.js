@@ -25,13 +25,28 @@ export const images = {
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/b4f2b8d7-bb37-4556-a370-1fd2a4bb1e00/public',
   aircraftCockpit:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/3ad5a228-0f95-4af1-0b5f-ad8634ccbd00/public',
+  aircraftProfile:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/1f043cc2-33ba-4e03-3ff5-49b3dc869c00/public',
   ratesMark:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/e87211b1-39b5-4178-519e-6645941f0200/public',
+  aboutMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/7cd4b1e6-8131-41d0-8b70-961f9b584d00/public',
+  coursesMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/ed414070-4fd3-4bc3-c034-370415c40400/public',
+  faqMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/03ba60a9-a4b0-4aef-a069-7a84a3a54d00/public',
+  resourcesMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/c1f8dbb1-50eb-4d49-510b-d2e3566bb900/public',
+  contactMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/d4233ace-a0f4-455d-aabc-a6d193504900/public',
 };
 
 export const instructor = {
   name: 'Ralph',
+  fullName: 'Ralph J. Zahnle Jr.',
   title: 'Chief Flight Instructor',
+  credentials: 'ATP · CFII · MEI · A&P/IA',
+  business: 'Single Engine Specialties, LLC',
   photoAlt: 'Ralph, Gold Seal flight instructor at Learn2FlyFlorida',
 };
 
@@ -48,25 +63,8 @@ export const contact = {
 
 export const nav = [
   { label: 'Home', href: '/' },
-  {
-    label: 'About',
-    href: '/about',
-    children: [
-      { label: 'The Instructor', href: '/about#instructor' },
-      { label: 'Certificates & Ratings', href: '/about#credentials' },
-      { label: 'FAQ', href: '/faq' },
-    ],
-  },
-  {
-    label: 'Courses',
-    href: '/courses',
-    children: [
-      { label: 'Private Pilot', href: '/courses#private-pilot' },
-      { label: 'Instrument Rating', href: '/courses#instrument-rating' },
-      { label: 'Commercial Pilot', href: '/courses#commercial-pilot' },
-      { label: 'Flight Instructor (CFI)', href: '/courses#flight-instructor-cfi' },
-    ],
-  },
+  { label: 'About', href: '/about' },
+  { label: 'Courses', href: '/courses' },
   { label: 'Rates', href: '/rates' },
   { label: 'Aircraft', href: '/aircraft' },
   { label: 'Resources', href: '/resources' },
@@ -76,11 +74,15 @@ export const nav = [
 export const certificates = [
   'Airline Transport Pilot, Multiengine Land (ATP)',
   'CL-65 Type Rating, CRJ 200 / 700 / 900',
+  'Commercial Pilot, Single-Engine Land',
+  'Commercial Pilot, Single-Engine Sea',
+  'Commercial Pilot, Multiengine Sea',
   'Flight Instructor, Single & Multiengine Land & Sea',
   'Flight Instructor, Instrument Airplane',
   'Advanced Ground Instructor',
   'Gold Seal Flight Instructor',
-  'FAA Airframe Mechanic',
+  'Airframe & Powerplant Mechanic, Inspection Authorization (A&P/IA)',
+  'FCC Restricted Radiotelephone Operator Permit',
 ];
 
 export const courses = [
@@ -106,6 +108,14 @@ export const courses = [
       'Approaches, holds, departures, arrivals, and enroute workflow',
       'Up to 10 hours in the Redbird FMX toward the rating',
       'If signed off and you do not pass, retraining in failed areas is covered',
+    ],
+    prereqs: [
+      'Proof of U.S. citizenship',
+      'Private or Commercial Pilot certificate',
+      'Current FAA medical certificate',
+      'Instrument written (knowledge) test complete',
+      '40 hours of cross-country PIC time',
+      'Availability to study and fly focused full days',
     ],
   },
   {
@@ -186,12 +196,35 @@ export const rateNotes = [
   'All new renters complete a check flight (minimum one hour ground and one hour flight) before solo authorization.',
 ];
 
+export const additionalCosts = [
+  {
+    item: 'Examiner (DPE) Fee',
+    detail: 'Paid directly to your examiner for the practical exam',
+    price: '$800 to $1,000',
+  },
+  {
+    item: 'Online Ground School',
+    detail: 'King Schools private pilot ground school',
+    price: '$299',
+  },
+  {
+    item: 'Non-Owned Aircraft Insurance',
+    detail: 'Renter coverage required before you solo',
+    price: 'about $350 / yr',
+  },
+];
+
 export const aircraftSpecs = [
   { k: 'Model', v: 'Piper Cherokee 140' },
   { k: 'Year', v: '1969' },
   { k: 'Primary Display', v: 'uAvionix AV-30' },
   { k: 'Navigator', v: 'Garmin 430' },
+  { k: 'HSI', v: 'NSD-360' },
   { k: 'Autopilot', v: 'BendixKing AeroCruze' },
+  { k: 'Audio Panel', v: 'PS Engineering PMA8000BT' },
+  { k: 'Transponder', v: 'Garmin GTX 327' },
+  { k: 'Engine Monitor', v: 'Electronics International' },
+  { k: 'Fuel Flow', v: 'JPI Fuel Flow Gauge' },
   { k: 'ADSB', v: 'uAvionix ADS-B Out' },
   { k: 'Interior', v: 'Refurbished' },
   { k: 'Exhaust', v: 'PowerFlow' },

@@ -136,23 +136,28 @@
         </a>
       </div>
 
-      <button
-        class="radius-ui flex h-10 w-10 flex-col items-center justify-center gap-1.5 border border-line justify-self-end lg:hidden"
-        aria-label="Menu"
-        onclick={() => (mobileOpen = !mobileOpen)}
-      >
-        <span
-          class="h-px w-6 bg-ink transition-transform duration-300"
-          class:translate-y-[7px]={mobileOpen}
-          class:rotate-45={mobileOpen}
-        ></span>
-        <span class="h-px w-6 bg-ink transition-opacity duration-300" class:opacity-0={mobileOpen}></span>
-        <span
-          class="h-px w-6 bg-ink transition-transform duration-300"
-          class:-translate-y-[7px]={mobileOpen}
-          class:-rotate-45={mobileOpen}
-        ></span>
-      </button>
+      <div class="flex items-center justify-end gap-3 justify-self-end lg:hidden">
+        <a href={contact.phoneHref} class="text-sm font-black tracking-[-0.01em] text-accent sm:text-base">
+          {contact.phone}
+        </a>
+        <button
+          class="radius-ui flex h-11 w-11 flex-col items-center justify-center gap-1.5 bg-paper/90 shadow-sm transition-all duration-300 hover:bg-accent/10 hover:shadow-md"
+          aria-label="Menu"
+          onclick={() => (mobileOpen = !mobileOpen)}
+        >
+          <span
+            class="h-1 w-6 rounded-full bg-accent transition-transform duration-300"
+            class:translate-y-[10px]={mobileOpen}
+            class:rotate-45={mobileOpen}
+          ></span>
+          <span class="h-1 w-6 rounded-full bg-accent transition-opacity duration-300" class:opacity-0={mobileOpen}></span>
+          <span
+            class="h-1 w-6 rounded-full bg-accent transition-transform duration-300"
+            class:-translate-y-[10px]={mobileOpen}
+            class:-rotate-45={mobileOpen}
+          ></span>
+        </button>
+      </div>
     </nav>
   </div>
 
@@ -214,16 +219,6 @@
           </li>
         {/each}
         <li class="flex flex-col gap-3 pt-5">
-          <a href={contact.phoneHref} onclick={close} class="nav-phone ulink block py-1.5 text-sm font-bold text-ink/84">
-            {contact.phone}
-            <svg class="nav-phone__draw" viewBox="0 0 120 8" preserveAspectRatio="none" aria-hidden="true">
-              <path
-                class="nav-phone__path"
-                pathLength="1"
-                d="M0 5.5 C18 2.5, 42 6.5, 60 4.5 S102 3, 120 5"
-              />
-            </svg>
-          </a>
           <a href="/contact" onclick={close} class="btn-gradient-accent w-fit transition-all duration-300">
             Start Training
           </a>

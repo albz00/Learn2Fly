@@ -3,13 +3,13 @@
   import { aircraftSpecs, images } from './data.js';
 </script>
 
-<section id="aircraft" class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+<section id="aircraft" class="site-shell section-space">
   <SectionHead kicker="Training Aircraft" title="One training platform, maintained to a high standard." />
 
-  <div class="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-16">
+  <div class="section-flow grid gap-12 lg:grid-cols-12 lg:gap-16">
     <!-- visual panel -->
     <div class="space-y-4 lg:col-span-7">
-      <div class="radius-ui relative aspect-[16/10] overflow-hidden border border-line-dark bg-ink">
+      <div class="radius-ui relative aspect-[16/10] overflow-hidden bg-ink">
         <img
           src={images.aircraftExterior}
           alt="1969 Piper Cherokee 140 N833WT on the ramp at Lake City Gateway Airport"
@@ -24,7 +24,7 @@
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
-        <div class="radius-ui relative aspect-[4/3] overflow-hidden border border-line">
+        <div class="radius-ui relative aspect-[4/3] overflow-hidden">
           <img
             src={images.aircraftCockpit}
             alt="Modernized instrument panel of the Learn2FlyFlorida Cherokee 140 with Garmin avionics"
@@ -33,7 +33,7 @@
             decoding="async"
           />
         </div>
-        <div class="radius-ui relative aspect-[4/3] overflow-hidden border border-line">
+        <div class="radius-ui relative aspect-[4/3] overflow-hidden">
           <img
             src={images.instrumentCloseUp}
             alt="Primary flight instruments in the Cherokee 140 including digital attitude indicator and steam gauges"
@@ -55,7 +55,7 @@
           build faster and hold up better on checkride day.
         </p>
 
-        <dl class="radius-ui mt-10 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line">
+        <dl class="radius-ui mt-10 grid grid-cols-2 gap-px overflow-hidden bg-line">
           {#each aircraftSpecs as s}
             <div class="surface-paper radius-ui px-5 py-5">
               <dt class="label text-soft">{s.k}</dt>

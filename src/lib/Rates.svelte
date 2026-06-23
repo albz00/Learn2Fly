@@ -1,14 +1,14 @@
 <script>
   import SectionHead from './SectionHead.svelte';
   import Check from './Check.svelte';
-  import { rates, rateNotes } from './data.js';
+  import { rates, rateNotes, additionalCosts } from './data.js';
 </script>
 
 <section id="rates" class="section-band">
-  <div class="mx-auto max-w-[1240px] px-6 py-24 lg:px-10 lg:py-32">
+  <div class="site-shell section-space">
     <SectionHead kicker="Rates & Policies" title="Clear rates and policies, up front." />
 
-    <div class="mt-14 grid gap-14 lg:grid-cols-12">
+    <div class="section-flow grid gap-14 lg:grid-cols-12">
       <div class="lg:col-span-8">
         <div class="card-elevated divide-y divide-line">
           {#each rates as r}
@@ -23,6 +23,25 @@
               </div>
             </div>
           {/each}
+        </div>
+
+        <div class="mt-8">
+          <div class="label mb-4 text-signal">Other Costs to Plan For</div>
+          <p class="mb-6 max-w-xl text-sm leading-relaxed text-soft">
+            Beyond rental and instruction, every certificate has a few outside costs paid to other providers.
+            Knowing them up front keeps your budget realistic from day one.
+          </p>
+          <div class="card-elevated divide-y divide-line">
+            {#each additionalCosts as c}
+              <div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 px-7 py-6">
+                <div class="min-w-[14rem] flex-1 pr-2">
+                  <h3 class="display text-xl text-ink">{c.item}</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed text-soft">{c.detail}</p>
+                </div>
+                <span class="display text-2xl text-ink lg:text-3xl">{c.price}</span>
+              </div>
+            {/each}
+          </div>
         </div>
       </div>
 
