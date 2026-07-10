@@ -151,13 +151,13 @@ export const rates = [
   {
     item: 'Piper Cherokee 140',
     detail: 'Aircraft rental in our primary trainer',
-    price: '$150',
+    price: '$180',
     unit: '/ hr wet',
   },
   {
     item: 'Piper Cherokee 140',
     detail: 'Dry option for qualified renters',
-    price: '$110',
+    price: '$120',
     unit: '/ hr dry',
   },
   {
@@ -231,7 +231,7 @@ export const aircraftSpecs = [
   { k: 'ADSB', v: 'uAvionix ADS-B Out' },
   { k: 'Interior', v: 'Refurbished' },
   { k: 'Exhaust', v: 'PowerFlow' },
-  { k: 'Rate', v: '$150 / hr wet' },
+  { k: 'Rate', v: '$180 / hr wet' },
 ];
 
 export const resources = [

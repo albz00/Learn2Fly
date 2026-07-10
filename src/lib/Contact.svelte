@@ -1,8 +1,45 @@
 <script>
+  import { onMount } from 'svelte';
   import SectionHead from './SectionHead.svelte';
   import { contact, courses } from './data.js';
 
+  const TURNSTILE_SITE_KEY = '0x4AAAAAADzbunucCV7IFLYR';
+  let turnstileScriptPromise;
+
+  function loadTurnstile() {
+    if (typeof window === 'undefined') return Promise.resolve();
+    if (window.turnstile) return Promise.resolve(window.turnstile);
+
+    if (!turnstileScriptPromise) {
+      turnstileScriptPromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[data-turnstile-script]');
+
+        if (existing) {
+          existing.addEventListener('load', () => resolve(window.turnstile), { once: true });
+          existing.addEventListener('error', reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        script.async = true;
+        script.defer = true;
+        script.dataset.turnstileScript = 'true';
+        script.onload = () => resolve(window.turnstile);
+        script.onerror = () => reject(new Error('Turnstile could not be loaded.'));
+        document.head.appendChild(script);
+      });
+    }
+
+    return turnstileScriptPromise;
+  }
+
   let sent = $state(false);
+  let submitting = $state(false);
+  let statusMessage = $state('');
+  let turnstileToken = $state('');
+  let turnstileEl = $state();
+  let turnstileWidgetId;
 
   let name = $state('');
   let email = $state('');
@@ -12,27 +49,85 @@
   let time = $state('');
   let message = $state('');
 
-  function submit(e) {
+  onMount(() => {
+    let cancelled = false;
+
+    loadTurnstile()
+      .then((turnstile) => {
+        if (cancelled || !turnstileEl || !turnstile) return;
+
+        turnstileWidgetId = turnstile.render(turnstileEl, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => {
+            turnstileToken = token;
+            statusMessage = '';
+          },
+          'expired-callback': () => {
+            turnstileToken = '';
+          },
+          'error-callback': () => {
+            turnstileToken = '';
+            statusMessage = 'Security check could not be completed. Please refresh and try again.';
+          },
+        });
+      })
+      .catch(() => {
+        statusMessage = 'Security check could not be loaded. Please refresh and try again.';
+      });
+
+    return () => {
+      cancelled = true;
+      if (window.turnstile && turnstileWidgetId != null) {
+        window.turnstile.remove(turnstileWidgetId);
+      }
+    };
+  });
+
+  async function submit(e) {
     e.preventDefault();
+    statusMessage = '';
 
-    const lines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      phone && `Phone: ${phone}`,
-      `Interested in: ${interest}`,
-      date && `Preferred date: ${date}`,
-      time && `Preferred time: ${time}`,
-      '',
-      message,
-    ].filter((l) => l !== false && l !== undefined && l !== null);
+    if (!turnstileToken) {
+      statusMessage = 'Please complete the security check before sending.';
+      return;
+    }
 
-    const subject = `Training request${name ? ` from ${name}` : ''} · ${interest}`;
-    const mailto = `${contact.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      lines.join('\n'),
-    )}`;
+    submitting = true;
 
-    window.location.href = mailto;
-    sent = true;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          interest,
+          date,
+          time,
+          message,
+          turnstileToken,
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Your message could not be sent. Please try again.');
+      }
+
+      sent = true;
+    } catch (error) {
+      statusMessage = error.message || 'Your message could not be sent. Please try again.';
+      turnstileToken = '';
+      if (turnstileWidgetId != null) {
+        window.turnstile?.reset(turnstileWidgetId);
+      }
+    } finally {
+      submitting = false;
+    }
   }
 
   const field =
@@ -55,10 +150,7 @@
               <span class="h-3 w-3 bg-signal"></span>
               <h3 class="display mt-5 text-3xl text-ink">Thanks, talk soon.</h3>
               <p class="mt-3 max-w-sm text-soft">
-                Your email app should have opened with your request ready to send to
-                <a href={contact.emailHref} class="text-ink ulink">{contact.email}</a>. If it did not, you can
-                reach the instructor directly at
-                <a href={contact.phoneHref} class="text-ink ulink">{contact.phone}</a>.
+                Your message has been sent. You will also receive a confirmation email at the address you entered.
               </p>
             </div>
           {:else}
@@ -99,14 +191,29 @@
 
               <label class="block">
                 <span class={labelCls}>Message</span>
-                <textarea rows="3" bind:value={message} placeholder="Tell me a little about your goals" class={field}></textarea>
+                <textarea
+                  required
+                  rows="3"
+                  bind:value={message}
+                  placeholder="Tell me a little about your goals"
+                  class={field}
+                ></textarea>
               </label>
+
+              <div bind:this={turnstileEl}></div>
+
+              {#if statusMessage}
+                <p class="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+                  {statusMessage}
+                </p>
+              {/if}
 
               <button
                 type="submit"
+                disabled={submitting}
                 class="btn-gradient-accent w-full transition-all duration-300 hover:-translate-y-0.5"
               >
-                Send request &#8594;
+                {submitting ? 'Sending...' : 'Send request \u2192'}
               </button>
             </form>
           {/if}
