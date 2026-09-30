@@ -16,6 +16,8 @@
   import PageBanner from './lib/PageBanner.svelte';
   import HomeDeck from './lib/HomeDeck.svelte';
   import LoadingScreen from './lib/LoadingScreen.svelte';
+  import CookieBanner from './lib/CookieBanner.svelte';
+  import { trackPage } from './lib/consent.js';
 
   const routeConfigs = {
     '/about': {
@@ -324,7 +326,9 @@
 
   $effect(() => {
     if (typeof document === 'undefined') return;
+    const path = `${currentPath}${currentHash}`;
     updateSeo(currentPath);
+    trackPage(path);
   });
 </script>
 
@@ -360,3 +364,4 @@
 </main>
 
 <Footer />
+<CookieBanner />

@@ -2,8 +2,7 @@
   import { onMount } from 'svelte';
   import { images } from './data.js';
 
-  const instructorPortrait =
-    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/4d3f5e2d-c440-4a6c-19c7-fad6ed736400/public';
+  const instructorPortrait = images.floridaMark;
 
   const heroSlides = [
     images.aircraftExterior,
@@ -33,11 +32,17 @@
 <section id="home" class="bg-flight-night relative overflow-hidden text-paper">
   <div class="absolute inset-0" aria-hidden="true">
     {#each heroSlides as slide, i}
-      <div
-        class="absolute inset-0 bg-cover bg-center transition-opacity duration-[1500ms] ease-in-out"
-        style={`background-image:${heroOverlay},url('${slide}');opacity:${i === activeSlide ? 1 : 0}`}
-      ></div>
+      <img
+        src={slide}
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out"
+        style:opacity={i === activeSlide ? 1 : 0}
+        decoding="async"
+        fetchpriority={i === 0 ? 'high' : 'low'}
+        loading="eager"
+      />
     {/each}
+    <div class="absolute inset-0" style:background-image={heroOverlay}></div>
   </div>
   <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(13,36,59,0.3),rgba(13,36,59,0.06))]" aria-hidden="true"></div>
 

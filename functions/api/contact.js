@@ -1,4 +1,4 @@
-const OWNER_EMAIL = 'alzimmr1@gmail.com';
+const OWNER_EMAIL = 'ralph@zahnle.net';
 const FROM_EMAIL = 'Learn2FlyFlorida <info@hostverna.co>';
 
 const json = (body, status = 200) =>

@@ -90,11 +90,14 @@
 </script>
 
 <section class="section-band deck-section">
-  <div
+  <img
     class="deck-section__media"
-    style={`background-image: url(${images.aircraftProfile});`}
-    aria-hidden="true"
-  ></div>
+    src={images.aircraftProfile}
+    alt=""
+    decoding="async"
+    fetchpriority="low"
+    loading="eager"
+  />
   <div class="site-shell section-space">
     <div
       id="deck-top"
@@ -186,9 +189,8 @@
     right: 0;
     bottom: 0;
     left: 38%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center right;
+    object-fit: cover;
+    object-position: center right;
     opacity: 0.14;
     pointer-events: none;
     /* fade the left edge of the image into the white background */

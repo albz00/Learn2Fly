@@ -39,7 +39,13 @@ export const images = {
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/c1f8dbb1-50eb-4d49-510b-d2e3566bb900/public',
   contactMark:
     'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/d4233ace-a0f4-455d-aabc-a6d193504900/public',
+  floridaMark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/4d3f5e2d-c440-4a6c-19c7-fad6ed736400/public',
+  bannerWordmark:
+    'https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/e414d6b0-d6ea-4429-9bef-62fdcb734000/public',
 };
+
+export const cachedImageUrls = [brand.logo, ...Object.values(images)];
 
 export const instructor = {
   name: 'Ralph',

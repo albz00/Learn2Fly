@@ -1,5 +1,6 @@
 <script>
   import { brand, contact, instructor } from './data.js';
+  import { openCookieSettings } from './consent.js';
 
   const year = new Date().getFullYear();
 
@@ -60,6 +61,11 @@
           {#each complianceLinks as item}
             <li><a href={item.href} class="ulink text-sm text-paper/82">{item.label}</a></li>
           {/each}
+          <li>
+            <button type="button" class="footer-text-btn ulink text-sm text-paper/82" onclick={openCookieSettings}>
+              Cookie settings
+            </button>
+          </li>
         </ul>
       </nav>
 
@@ -80,3 +86,14 @@
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-text-btn {
+    border-radius: 0;
+    background: none;
+    padding: 0;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-align: left;
+  }
+</style>

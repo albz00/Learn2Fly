@@ -40,11 +40,17 @@
 <section class="bg-flight-night relative overflow-hidden text-paper">
   <div class="absolute inset-0" aria-hidden="true">
     {#each heroSlides as slide, i}
-      <div
-        class="absolute inset-0 bg-cover bg-center transition-opacity duration-[1500ms] ease-in-out"
-        style={`background-image:${heroOverlay},url('${slide}');opacity:${i === activeSlide ? 1 : 0}`}
-      ></div>
+      <img
+        src={slide}
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ease-in-out"
+        style:opacity={i === activeSlide ? 1 : 0}
+        decoding="async"
+        fetchpriority={i === 0 ? 'high' : 'low'}
+        loading="eager"
+      />
     {/each}
+    <div class="absolute inset-0" style:background-image={heroOverlay}></div>
   </div>
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,36,59,0.3),rgba(13,36,59,0.06))]"></div>
@@ -55,7 +61,7 @@
       <div>
         <span class="micro-head text-paper/84">
           <img
-            src="https://imagedelivery.net/FvOXf_HoZxDXgXU5xPiCfw/e414d6b0-d6ea-4429-9bef-62fdcb734000/public"
+            src={images.bannerWordmark}
             alt="Learn2FlyFlorida"
             class="h-3.5 w-auto object-contain sm:h-4"
             loading="eager"
