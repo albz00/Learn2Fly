@@ -42,7 +42,7 @@
   <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(13,36,59,0.3),rgba(13,36,59,0.06))]" aria-hidden="true"></div>
 
   <div class="site-shell relative">
-    <div class="relative min-h-[88svh] pb-12 pt-44 lg:pb-16 lg:pt-48">
+    <div class="relative pb-12 pt-40 lg:pb-14 lg:pt-44">
       <div class="relative">
         <div>
           <h1 class="display max-w-3xl text-[clamp(2rem,4.8vw,3.5rem)] leading-[1.14] text-paper">
